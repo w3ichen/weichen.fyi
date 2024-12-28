@@ -1,7 +1,13 @@
 import { styled } from "@mui/material";
 import React from "react";
+import { useSpring, animated, to } from "@react-spring/web";
+import { useGesture } from "@use-gesture/react";
 
 const PROFILE_IMG_SIZE = 200;
+
+const calcX = (y: number, ly: number) =>
+  -(y - ly - window.innerHeight / 2) / 20;
+const calcY = (x: number, lx: number) => (x - lx - window.innerWidth / 2) / 20;
 
 const Root = styled("div")(({}) => ({
   overflow: "visible",
@@ -40,10 +46,49 @@ const ProfileImage = styled("img")(({ theme }) => ({
 export default function HeroImage() {
   //   const { role } = React.useContext(PageContext);
 
+  const domTarget = React.useRef(null);
+  // Animate profile image on hover
+  const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(
+    () => ({
+      rotateX: 0,
+      rotateY: 0,
+      rotateZ: 0,
+      scale: 1,
+      zoom: 0,
+      x: 0,
+      y: 0,
+      config: { mass: 5, tension: 350, friction: 40 },
+    })
+  );
+  useGesture(
+    {
+      onMove: ({ xy: [px, py], dragging }) =>
+        !dragging &&
+        api({
+          rotateX: calcX(py, y.get()),
+          rotateY: calcY(px, x.get()),
+          scale: 1.1,
+        }),
+      onHover: ({ hovering }) =>
+        !hovering && api({ rotateX: 0, rotateY: 0, scale: 1 }),
+    },
+    { target: domTarget, eventOptions: { passive: false } }
+  );
   return (
     <Root>
       <CoverImage src="banner_img.jpeg" alt="cover image" />
-      <ProfileImage src="profile_img.jpeg" alt="profile image" />
+      <animated.div
+        ref={domTarget}
+        style={{
+          transform: "perspective(600px)",
+          scale: to([scale, zoom], (s, z) => s + z),
+          rotateX,
+          rotateY,
+          rotateZ,
+        }}
+      >
+        <ProfileImage src="profile_img.jpeg" alt="profile image" />
+      </animated.div>
     </Root>
   );
 }

@@ -26,7 +26,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 
   // Apply styles to the chip
   ".MuiChip-outlined": {
-    transition: "all 0.5s ease", // Smooth transition
+    transition: "all 0.7s ease", // Smooth transition
   },
 
   // On hover effect for card and chip
