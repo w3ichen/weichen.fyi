@@ -173,7 +173,7 @@ export default function Quote() {
 
   return (
     <Grid
-      size={{ xs: 12, md: 8 }}
+      size={{ xs: 12, md: 7 }}
       container
       width="fit-content"
       fontStyle="italic"

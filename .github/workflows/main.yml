@@ -17,6 +17,10 @@ jobs:
           node-version: 22.x
           cache: npm
 
+      - name: Set up Secrets
+        run: |
+          echo '${{ secrets.NODE_PROD_ENV }}' > .env.production
+
       - name: Build
         run: |
           npm ci
