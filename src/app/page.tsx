@@ -1,8 +1,11 @@
 "use client";
 
 import Footer from "@/components/Footer/Footer";
+import HeroImage from "@/components/HeroImage/HeroImage";
 import Nav from "@/components/Nav/Nav";
+import Timeline from "@/components/Timeline/Timeline";
 import { PageContext, Role, ROLES } from "@/constants/PageContext";
+import { Container } from "@mui/material";
 import React from "react";
 
 export default function Home() {
@@ -11,8 +14,10 @@ export default function Home() {
   return (
     <PageContext.Provider value={{ role, setRole }}>
       <Nav />
-      <main style={{ backgroundColor: "red", height: "150vh" }}>main</main>
-
+      <Container maxWidth="xl">
+        <HeroImage />
+        <Timeline />
+      </Container>
       <Footer />
     </PageContext.Provider>
   );

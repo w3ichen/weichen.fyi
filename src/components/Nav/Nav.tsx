@@ -12,6 +12,7 @@ const Root = styled("nav")(({ theme }) => ({
   gap: "10px",
   backgroundColor: "rgba(255, 255, 255, 0.9)", // Translucent background
   height: "fit-content",
+  zIndex: 5,
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
     textAlign: "center",
