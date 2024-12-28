@@ -2,11 +2,11 @@
 
 import Footer from "@/components/Footer/Footer";
 import Nav from "@/components/Nav/Nav";
-import { PageContext, Role } from "@/constants/PageContext";
+import { PageContext, Role, ROLES } from "@/constants/PageContext";
 import React from "react";
 
 export default function Home() {
-  const [role, setRole] = React.useState<Role>("ROBOTICIST");
+  const [role, setRole] = React.useState<Role>(ROLES.ROBOTICIST);
 
   return (
     <PageContext.Provider value={{ role, setRole }}>

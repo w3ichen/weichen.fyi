@@ -1,5 +1,5 @@
-import { Role, ROLES } from "@/constants/PageContext";
-import { Box, Stack, styled, Typography } from "@mui/material";
+import { ROLES } from "@/constants/PageContext";
+import { Stack, styled, Typography } from "@mui/material";
 import NavButton from "./NavButton";
 
 const Root = styled("nav")(({ theme }) => ({
@@ -10,33 +10,42 @@ const Root = styled("nav")(({ theme }) => ({
   padding: "15px 40px",
   flexDirection: "row",
   gap: "10px",
+  backgroundColor: "rgba(255, 255, 255, 0.9)", // Translucent background
+  height: "fit-content",
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
     textAlign: "center",
     alignItems: "center",
     padding: "15px",
   },
-  backgroundColor: "rgba(255, 255, 255, 0.9)", // Translucent background
 }));
 
-const ButtonsContainer = styled(Stack)(({}) => ({
-  overflowY: "hidden",
-  overflowX: "auto",
-  alignContent: "center",
-  justifyContent: "center",
+const ButtonsContainer = styled("div")(({ theme }) => ({
+  display: "flex",
+  flexDirection: "row",
+  gap: "30px",
+  width: "fit-content",
+  [theme.breakpoints.down("md")]: {
+    gap: "10px",
+    width: "100%",
+    justifyContent: "center",
+  },
 }));
 
 export default function Nav() {
   return (
     <Root>
-      <Box>
-        <Typography variant="h6" component="h1">
-          Weichen Qiu
+      <Stack direction="row" gap={0.5}>
+        <Typography variant="h5" fontWeight={1000} fontFamily="Georgia">
+          weichen
         </Typography>
-      </Box>
-      <ButtonsContainer direction="row" spacing={3}>
-        {Object.entries(ROLES).map(([role, { short }]) => (
-          <NavButton key={role} role={role as Role} label={short} />
+        <Typography variant="h5" fontWeight={400} fontFamily="Georgia">
+          qiu
+        </Typography>
+      </Stack>
+      <ButtonsContainer>
+        {Object.values(ROLES).map((role) => (
+          <NavButton key={role} role={role} label={role} />
         ))}
       </ButtonsContainer>
     </Root>

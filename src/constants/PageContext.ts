@@ -1,19 +1,20 @@
+import { ValueOf } from "next/dist/shared/lib/constants";
 import React from "react";
 
 export const ROLES = {
-  ROBOTICIST: { short: "roboticist", long: "the Roboticist" },
-  ENTREPRENEUR: { short: "entrepreneur", long: "the Entrepreneur" },
-  SWE: { short: "swe", long: "the Software Engineer" },
-  STUDENT: { short: "student", long: "the Student" },
-  CREATOR: { short: "creator", long: "the Creator" },
+  ROBOTICIST: "roboticist",
+  ENTREPRENEUR: "entrepreneur",
+  SWE: "swe", // SWE = Software Engineer"
+  STUDENT: "student",
+  CREATOR: "creator",
 };
-export type Role = keyof typeof ROLES;
+export type Role = ValueOf<typeof ROLES>;
 
 interface PageContextInterface {
   role: Role;
   setRole: (role: Role) => void;
 }
 export const PageContext = React.createContext<PageContextInterface>({
-  role: "ROBOTICIST",
+  role: ROLES.ROBOTICIST,
   setRole: () => {},
 });
