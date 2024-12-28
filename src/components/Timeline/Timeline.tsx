@@ -22,7 +22,7 @@ export default function Timeline() {
   const role_detail = roles_details[role];
 
   return (
-    <MuiTimeline position="right" sx={{ mt: 1, mb: 6 }}>
+    <MuiTimeline position="right" sx={{ mt: 1, mb: 6, p: 0 }}>
       {role_detail.map((detail, index) => (
         <TimelineEntry key={`timeline-entry-${index}`} {...detail} />
       ))}

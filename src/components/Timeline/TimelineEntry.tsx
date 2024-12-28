@@ -24,6 +24,21 @@ const StyledTimelineDot = styled(TimelineDot)(({}) => ({
   alignItems: "center",
 }));
 
+const OppositeContent = styled(TimelineOppositeContent)(({ theme }) => ({
+  margin: "auto 0",
+  paddingRight: theme.spacing(3),
+  paddingLeft: 0,
+  textAlign: "right",
+  color: theme.palette.text.secondary,
+  [theme.breakpoints.down("sm")]: {
+    // For small screens, force the width to be 20vw
+    maxWidth: "20vw",
+    width: "20vw",
+    minWidth: "20vw",
+    paddingRight: theme.spacing(1),
+  },
+}));
+
 export default function TimelineEntry({
   startDate,
   endDate,
@@ -49,14 +64,9 @@ export default function TimelineEntry({
 
   return (
     <TimelineItem>
-      <TimelineOppositeContent
-        sx={{ m: "auto 0" }}
-        align="right"
-        variant="body2"
-        color="text.secondary"
-      >
+      <OppositeContent variant="body2">
         <ListItemText primary={`${start} - ${end}`} secondary={duration} />
-      </TimelineOppositeContent>
+      </OppositeContent>
       <TimelineSeparator>
         <TimelineConnector />
         <StyledTimelineDot>
@@ -69,7 +79,7 @@ export default function TimelineEntry({
         </StyledTimelineDot>
         <TimelineConnector />
       </TimelineSeparator>
-      <TimelineContent sx={{ py: "12px", px: 3 }}>
+      <TimelineContent sx={{ py: "12px", pl: { xs: 1, sm: 3 }, pr: 0 }}>
         <TimelineCard
           company={company}
           position={position}
