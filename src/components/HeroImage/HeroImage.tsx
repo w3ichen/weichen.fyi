@@ -21,6 +21,7 @@ const CoverImage = styled("img")({
 const ProfileImage = styled("img")(({ theme }) => ({
   position: "absolute",
   objectFit: "cover",
+  objectPosition: "center",
   borderRadius: "50%",
   width: PROFILE_IMG_SIZE + "px",
   height: PROFILE_IMG_SIZE + "px",

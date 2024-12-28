@@ -1,27 +1,31 @@
-import FastfoodIcon from "@mui/icons-material/Fastfood";
-import HotelIcon from "@mui/icons-material/Hotel";
-import LaptopMacIcon from "@mui/icons-material/LaptopMac";
+import {
+  PageContext,
+  Role,
+  ROLES,
+  TimelineDetail,
+} from "@/constants/PageContext";
+import { student_details } from "@/constants/roles/student";
 import MuiTimeline from "@mui/lab/Timeline";
+import React from "react";
 import TimelineEntry from "./TimelineEntry";
 
+const roles_details: { [role: Role]: TimelineDetail[] } = {
+  [ROLES.ROBOTICIST]: student_details,
+  [ROLES.ENTREPRENEUR]: student_details,
+  [ROLES.SWE]: student_details,
+  [ROLES.STUDENT]: student_details,
+  [ROLES.CREATOR]: student_details,
+};
+
 export default function Timeline() {
+  const { role } = React.useContext(PageContext);
+  const role_detail = roles_details[role];
+
   return (
-    <MuiTimeline position="alternate" sx={{ mt: 1, mb: 5 }}>
-      <TimelineEntry
-        leftText="9:30am"
-        rightText="Eat because you need strength"
-        icon={<FastfoodIcon />}
-      />
-      <TimelineEntry
-        leftText="10:00 am"
-        rightText="Code because it's awesome!"
-        icon={<LaptopMacIcon />}
-      />
-      <TimelineEntry
-        leftText="12:00 pm"
-        rightText="Sleep because you need rest"
-        icon={<HotelIcon />}
-      />
+    <MuiTimeline position="right" sx={{ mt: 1, mb: 6 }}>
+      {role_detail.map((detail, index) => (
+        <TimelineEntry key={`timeline-entry-${index}`} {...detail} />
+      ))}
     </MuiTimeline>
   );
 }

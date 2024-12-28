@@ -1,5 +1,6 @@
 import { ValueOf } from "next/dist/shared/lib/constants";
 import React from "react";
+import { Skill } from "./skills";
 
 export const ROLES = {
   ROBOTICIST: "roboticist",
@@ -9,6 +10,16 @@ export const ROLES = {
   CREATOR: "creator",
 };
 export type Role = ValueOf<typeof ROLES>;
+
+export interface TimelineDetail {
+  company: string;
+  position: string;
+  startDate: { year: number; month: number };
+  endDate: { year: number; month: number } | undefined; // Undefined if present
+  logo: string;
+  location: string;
+  skills: Skill[];
+}
 
 interface PageContextInterface {
   role: Role;
