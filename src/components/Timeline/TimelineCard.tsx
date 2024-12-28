@@ -20,9 +20,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   width: "fit-content",
   borderRadius: "20px",
   border: `2px solid ${theme.palette.divider}`,
-  transition: theme.transitions.create(["box-shadow", "border"], {
-    duration: 0.5,
-  }),
+  transition: "box-shadow border 0.5s ease", // Smooth transition
 
   // Apply styles to the chip
   ".MuiChip-outlined": {
