@@ -1,6 +1,7 @@
 import { TimelineDetail } from "@/constants/PageContext";
 import { SKILL_TYPES_COLORS, SKILLS } from "@/constants/skills";
-import { CardActions, Chip, ChipProps, styled } from "@mui/material";
+import { ExpandMore } from "@mui/icons-material";
+import { CardActions, Chip, ChipProps, Stack, styled } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
@@ -57,23 +58,26 @@ export default function TimelineCard({
           <Typography variant="caption">{location}</Typography>
         </CardContent>
         <CardActions sx={{ mt: 0, pt: 0 }}>
-          {skills.map((skill, i) => {
-            const skill_type = get(SKILLS, skill, "default");
-            const color = get(
-              SKILL_TYPES_COLORS,
-              skill_type,
-              "default"
-            ) as ChipProps["color"];
-            return (
-              <Chip
-                key={`skill-${skill}-${i}`}
-                label={skill}
-                size="small"
-                variant="outlined"
-                color={color}
-              />
-            );
-          })}
+          <Stack direction="row" spacing={1} width="100%">
+            {skills.map((skill, i) => {
+              const skill_type = get(SKILLS, skill, "default");
+              const color = get(
+                SKILL_TYPES_COLORS,
+                skill_type,
+                "default"
+              ) as ChipProps["color"];
+              return (
+                <Chip
+                  key={`skill-${skill}-${i}`}
+                  label={skill}
+                  size="small"
+                  variant="outlined"
+                  color={color}
+                />
+              );
+            })}
+          </Stack>
+          <ExpandMore color="action" />
         </CardActions>
       </CardActionArea>
     </StyledCard>
