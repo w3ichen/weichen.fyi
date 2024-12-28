@@ -1,4 +1,3 @@
-import { PageContext } from "@/constants/PageContext";
 import { styled } from "@mui/material";
 import React from "react";
 
@@ -38,7 +37,7 @@ const ProfileImage = styled("img")(({ theme }) => ({
 }));
 
 export default function HeroImage() {
-  const { role } = React.useContext(PageContext);
+  //   const { role } = React.useContext(PageContext);
 
   return (
     <Root>
