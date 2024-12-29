@@ -10,6 +10,7 @@ const Root = styled("footer")(({ theme }) => ({
   minHeight: "100px",
   borderRadius: "20px 20px 0 0",
   padding: "30px",
+  marginTop: "100px",
 }));
 
 export default function Footer() {

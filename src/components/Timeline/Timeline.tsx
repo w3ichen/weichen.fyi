@@ -3,7 +3,7 @@ import {
   Role,
   ROLES,
   TimelineDetail,
-} from "@/constants/PageContext";
+} from "@/components/Page/PageContext";
 import { student_details } from "@/constants/roles/student";
 import MuiTimeline from "@mui/lab/Timeline";
 import React from "react";

@@ -1,5 +1,6 @@
-import { PageContext, Role } from "@/constants/PageContext";
+import { PageContext, Role } from "@/components/Page/PageContext";
 import { ButtonBase, styled, Theme, Typography } from "@mui/material";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const StyledTypography = styled(Typography)(
@@ -32,11 +33,14 @@ interface Props {
 }
 export default function NavButton({ role, label }: Props) {
   const { role: selectedRole, setRole } = React.useContext(PageContext);
+  const router = useRouter();
 
   const selected = role === selectedRole;
 
   const handleClick = () => {
     setRole(role);
+    // Set role in url query
+    router.push("/?is=" + role, { scroll: false });
   };
 
   return (

@@ -2,6 +2,7 @@ import { styled } from "@mui/material";
 import React from "react";
 import { useSpring, animated, to } from "@react-spring/web";
 import { useGesture } from "@use-gesture/react";
+import { HeroImageBase } from "./common";
 
 const PROFILE_IMG_SIZE = 200;
 
@@ -15,14 +16,6 @@ const Root = styled("div")(({}) => ({
   marginBottom: `calc(${PROFILE_IMG_SIZE / 2}px + 50px)`,
   position: "relative",
 }));
-
-const CoverImage = styled("img")({
-  width: "100%",
-  height: "auto",
-  objectFit: "cover",
-  borderRadius: "30px",
-  minHeight: "300px",
-});
 
 const ProfileImage = styled("img")(({ theme }) => ({
   position: "absolute",
@@ -44,8 +37,6 @@ const ProfileImage = styled("img")(({ theme }) => ({
 }));
 
 export default function HeroImage() {
-  //   const { role } = React.useContext(PageContext);
-
   const domTarget = React.useRef(null);
   // Animate profile image on hover
   const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(
@@ -76,7 +67,7 @@ export default function HeroImage() {
   );
   return (
     <Root>
-      <CoverImage src="banner_img.jpeg" alt="cover image" />
+      <HeroImageBase src="banner_img.jpg" alt="cover image" />
       <animated.div
         ref={domTarget}
         style={{
@@ -87,7 +78,7 @@ export default function HeroImage() {
           rotateZ,
         }}
       >
-        <ProfileImage src="profile_img.jpeg" alt="profile image" />
+        <ProfileImage src="profile_img.jpg" alt="profile image" />
       </animated.div>
     </Root>
   );

@@ -1,6 +1,6 @@
 import { ValueOf } from "next/dist/shared/lib/constants";
 import React from "react";
-import { Skill } from "./skills";
+import { Skill } from "../../constants/skills";
 
 export const ROLES = {
   ROBOTICIST: "roboticist",
@@ -19,6 +19,7 @@ export interface TimelineDetail {
   logo: string;
   location: string;
   skills: Skill[];
+  url: string;
 }
 
 interface PageContextInterface {

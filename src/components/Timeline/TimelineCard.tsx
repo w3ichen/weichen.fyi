@@ -1,19 +1,13 @@
-import { TimelineDetail } from "@/constants/PageContext";
+import { TimelineDetail } from "@/components/Page/PageContext";
 import { SKILL_TYPES_COLORS, SKILLS } from "@/constants/skills";
-import { ExpandMore } from "@mui/icons-material";
+import { UnfoldMore } from "@mui/icons-material";
 import { CardActions, Chip, ChipProps, Stack, styled } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { get } from "lodash";
-
-interface Props {
-  company: TimelineDetail["company"];
-  position: TimelineDetail["position"];
-  location: TimelineDetail["location"];
-  skills: TimelineDetail["skills"];
-}
+import Link from "next/link";
 
 const StyledCard = styled(Card)(({ theme }) => ({
   maxWidth: 400,
@@ -21,7 +15,6 @@ const StyledCard = styled(Card)(({ theme }) => ({
   borderRadius: "20px",
   border: `2px solid ${theme.palette.divider}`,
   transition: "box-shadow border 0.5s ease", // Smooth transition
-
   // Apply styles to the chip
   ".MuiChip-outlined": {
     transition: "all 0.7s ease", // Smooth transition
@@ -44,40 +37,43 @@ export default function TimelineCard({
   position,
   location,
   skills,
-}: Props) {
+  url,
+}: TimelineDetail) {
   return (
     <StyledCard variant="outlined">
-      <CardActionArea>
-        <CardContent>
-          <Typography variant="subtitle1" fontWeight={500}>
-            {position}
-          </Typography>
-          <Typography variant="subtitle2">{company}</Typography>
-          <Typography variant="caption">{location}</Typography>
-        </CardContent>
-        <CardActions sx={{ mt: 0, pt: 0 }}>
-          <Stack direction="row" spacing={1} width="100%">
-            {skills.map((skill, i) => {
-              const skill_type = get(SKILLS, skill, "default");
-              const color = get(
-                SKILL_TYPES_COLORS,
-                skill_type,
-                "default"
-              ) as ChipProps["color"];
-              return (
-                <Chip
-                  key={`skill-${skill}-${i}`}
-                  label={skill}
-                  size="small"
-                  variant="outlined"
-                  color={color}
-                />
-              );
-            })}
-          </Stack>
-          <ExpandMore color="action" />
-        </CardActions>
-      </CardActionArea>
+      <Link href={url} passHref style={{ color: "inherit" }}>
+        <CardActionArea>
+          <CardContent>
+            <Typography variant="subtitle1" fontWeight={500}>
+              {position}
+            </Typography>
+            <Typography variant="subtitle2">{company}</Typography>
+            <Typography variant="caption">{location}</Typography>
+          </CardContent>
+          <CardActions sx={{ mt: 0, pt: 0 }}>
+            <Stack direction="row" spacing={1} width="100%">
+              {skills.map((skill, i) => {
+                const skill_type = get(SKILLS, skill, "default");
+                const color = get(
+                  SKILL_TYPES_COLORS,
+                  skill_type,
+                  "default"
+                ) as ChipProps["color"];
+                return (
+                  <Chip
+                    key={`skill-${skill}-${i}`}
+                    label={skill}
+                    size="small"
+                    variant="outlined"
+                    color={color}
+                  />
+                );
+              })}
+            </Stack>
+            <UnfoldMore color="action" />
+          </CardActions>
+        </CardActionArea>
+      </Link>
     </StyledCard>
   );
 }

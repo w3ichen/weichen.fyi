@@ -1,4 +1,4 @@
-import { TimelineDetail } from "@/constants/PageContext";
+import { TimelineDetail } from "@/components/Page/PageContext";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
@@ -39,15 +39,9 @@ const OppositeContent = styled(TimelineOppositeContent)(({ theme }) => ({
   },
 }));
 
-export default function TimelineEntry({
-  startDate,
-  endDate,
-  company,
-  position,
-  logo,
-  location,
-  skills,
-}: TimelineDetail) {
+export default function TimelineEntry(props: TimelineDetail) {
+  const { startDate, endDate, company, logo } = props;
+
   // Calculate the date, and date range
   const start = dateFormatter.format(
     new Date(startDate.year, startDate.month - 1)
@@ -80,12 +74,7 @@ export default function TimelineEntry({
         <TimelineConnector />
       </TimelineSeparator>
       <TimelineContent sx={{ py: "12px", pl: { xs: 1, sm: 3 }, pr: 0 }}>
-        <TimelineCard
-          company={company}
-          position={position}
-          location={location}
-          skills={skills}
-        />
+        <TimelineCard {...props} />
       </TimelineContent>
     </TimelineItem>
   );

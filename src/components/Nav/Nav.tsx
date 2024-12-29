@@ -1,6 +1,7 @@
-import { ROLES } from "@/constants/PageContext";
+import { ROLES } from "@/components/Page/PageContext";
 import { Stack, styled, Typography } from "@mui/material";
 import NavButton from "./NavButton";
+import Link from "next/link";
 
 const Root = styled("nav")(({ theme }) => ({
   position: "sticky",
@@ -36,14 +37,16 @@ const ButtonsContainer = styled("div")(({ theme }) => ({
 export default function Nav() {
   return (
     <Root>
-      <Stack direction="row" gap={0.5}>
-        <Typography variant="h5" fontWeight={1000} fontFamily="Georgia">
-          weichen
-        </Typography>
-        <Typography variant="h5" fontWeight={400} fontFamily="Georgia">
-          qiu
-        </Typography>
-      </Stack>
+      <Link href="/" passHref style={{ color: "inherit" }}>
+        <Stack direction="row" gap={0.5}>
+          <Typography variant="h5" fontWeight={1000} fontFamily="Georgia">
+            weichen
+          </Typography>
+          <Typography variant="h5" fontWeight={400} fontFamily="Georgia">
+            qiu
+          </Typography>
+        </Stack>
+      </Link>
       <ButtonsContainer>
         {Object.values(ROLES).map((role) => (
           <NavButton key={role} role={role} label={role} />
