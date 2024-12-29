@@ -13,6 +13,8 @@ export const SKILLS: { [skill: string]: SkillType } = {
   AP: "CATEGORY",
   Athletics: "CATEGORY",
   Volunteering: "CATEGORY",
+  BME: "CATEGORY",
+  CivE: "CATEGORY",
 };
 
 export type Skill = keyof typeof SKILLS;

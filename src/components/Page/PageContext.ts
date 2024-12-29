@@ -15,7 +15,7 @@ export interface TimelineDetail {
   company: string;
   position: string;
   startDate: { year: number; month: number };
-  endDate: { year: number; month: number } | undefined; // Undefined if present
+  endDate: { year: number; month: number } | "Present";
   logo: string;
   location: string;
   skills: Skill[];

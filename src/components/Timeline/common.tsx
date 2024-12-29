@@ -28,8 +28,8 @@ export function calcDuration(
   const startTotalMonths = startDate.getFullYear() * 12 + startDate.getMonth();
   const endTotalMonths = endDate.getFullYear() * 12 + endDate.getMonth();
 
-  // Difference in total months
-  const diffMonths = endTotalMonths - startTotalMonths;
+  // Difference in total months. +1 to match LinkedIn's calculation
+  const diffMonths = endTotalMonths - startTotalMonths + 1;
 
   // Convert months to years and remaining months
   const years = Math.floor(diffMonths / 12);

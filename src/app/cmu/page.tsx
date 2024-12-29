@@ -3,7 +3,8 @@
 import { HeroImageBase } from "@/components/HeroImage/common";
 import PageBase, { LinkNewTab } from "@/components/Page/PageBase";
 import { Container, styled, Typography } from "@mui/material";
-import { CMU_CLASSES } from "./constants";
+import { CMU_CERTIFICATES, CMU_CLASSES, CMU_RESEARCH_LABS } from "./constants";
+import TimelineList from "@/components/TimelineList/TimelineList";
 
 const Root = styled(Container)(({}) => ({
   fontFamily: "Open Sans", // Open Sans is CMU's official font
@@ -14,6 +15,9 @@ const Root = styled(Container)(({}) => ({
   },
 }));
 const UnorderedList = styled("ul")(({}) => ({
+  paddingLeft: "40px",
+}));
+const OrderedList = styled("ol")(({}) => ({
   paddingLeft: "40px",
 }));
 const HEADER_PT = 4;
@@ -30,7 +34,10 @@ export default function CmuPage() {
           Degree
         </Typography>
         <Typography variant="body1">
-          Masters in Electrical and Computer Engineering, Class of 2025
+          <strong>
+            Master of Science in Electrical and Computer Engineering, Class of
+            2025
+          </strong>
           <br />
           Jan 2024 - May 2025 | Pittsburgh, USA
         </Typography>
@@ -38,21 +45,13 @@ export default function CmuPage() {
         <Typography variant="h5" pt={HEADER_PT}>
           Research
         </Typography>
-        <UnorderedList>
-          <li>
-            <LinkNewTab href="https://www.cmu.edu/me/robomechanicslab/">
-              Robomechanics Lab
-            </LinkNewTab>{" "}
-            - take robots out of the lab and factory and into challenging real
-            world environments
-          </li>
-        </UnorderedList>
+        <TimelineList items={CMU_RESEARCH_LABS} />
 
         <Typography variant="subtitle1">PRINCIPAL INVESTIGATORS</Typography>
         <UnorderedList>
           <li>
             <LinkNewTab href="https://www.meche.engineering.cmu.edu/directory/bios/johnson-aaron.html">
-              Prof. Aaron Johnson
+              <strong>Dr. Aaron Johnson</strong>
             </LinkNewTab>
             , Associate Professor, Mechanical Engineering
           </li>
@@ -62,7 +61,7 @@ export default function CmuPage() {
           </li>
           <li>
             <LinkNewTab href="https://cee.engineering.cmu.edu/directory/bios/lowry-gregory.html">
-              Prof. Gregory Lowry
+              <strong>Dr. Gregory Lowry</strong>
             </LinkNewTab>
             , Sr. Professor, Civil and Environmental Engineering
           </li>
@@ -71,9 +70,10 @@ export default function CmuPage() {
           </li>
         </UnorderedList>
         <Typography variant="subtitle1">PUBLICATIONS</Typography>
-        <UnorderedList>
+        <OrderedList>
           <li>
-            Sarah Maenner. &quot;Robotics for environmental innovation.&quot;
+            Sarah Maenner.{" "}
+            <strong>&quot;Robotics for environmental innovation.&quot;</strong>{" "}
             CMU News, Nov 2024.&nbsp;
             <LinkNewTab href="https://engineering.cmu.edu/news-events/news/2024/11/01-robotics-environmental-innovation.html">
               [Article]
@@ -83,7 +83,16 @@ export default function CmuPage() {
               [LinkedIn]
             </LinkNewTab>
           </li>
-        </UnorderedList>
+        </OrderedList>
+
+        <Typography variant="h5" pt={HEADER_PT}>
+          Certifications
+        </Typography>
+        <OrderedList>
+          {CMU_CERTIFICATES.map((certificate, i) => (
+            <li key={`certificate-${i}`}>{certificate}</li>
+          ))}
+        </OrderedList>
 
         <Typography variant="h5" pt={HEADER_PT}>
           Coursework

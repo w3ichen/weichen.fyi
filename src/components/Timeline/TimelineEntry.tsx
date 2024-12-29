@@ -8,12 +8,14 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import { calcDuration } from "./common";
 import { ListItemText, styled } from "@mui/material";
 import TimelineCard from "./TimelineCard";
+import { get, isString } from "lodash";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
   year: "numeric",
 });
 const LOGO_SIZE = 80;
+const LEFT_WIDTH_SM = "20vw"; // For small screens, force the width to be 20vw
 
 const StyledTimelineDot = styled(TimelineDot)(({}) => ({
   overflow: "hidden",
@@ -31,10 +33,10 @@ const OppositeContent = styled(TimelineOppositeContent)(({ theme }) => ({
   textAlign: "right",
   color: theme.palette.text.secondary,
   [theme.breakpoints.down("sm")]: {
-    // For small screens, force the width to be 20vw
-    maxWidth: "20vw",
-    width: "20vw",
-    minWidth: "20vw",
+    // For small screens, force the width
+    maxWidth: LEFT_WIDTH_SM,
+    width: LEFT_WIDTH_SM,
+    minWidth: LEFT_WIDTH_SM,
     paddingRight: theme.spacing(1),
   },
 }));
@@ -46,14 +48,15 @@ export default function TimelineEntry(props: TimelineDetail) {
   const start = dateFormatter.format(
     new Date(startDate.year, startDate.month - 1)
   );
-  const end = endDate
-    ? dateFormatter.format(new Date(endDate.year, endDate.month - 1))
-    : "Present";
+  const end = isString(endDate)
+    ? endDate
+    : dateFormatter.format(new Date(endDate.year, endDate.month - 1));
+
   const duration = calcDuration(
     startDate.year,
     startDate.month,
-    endDate?.year,
-    endDate?.month
+    get(endDate, "year"),
+    get(endDate, "month")
   );
 
   return (

@@ -18,7 +18,7 @@ export const student_details: TimelineDetail[] = [
     endDate: { year: 2023, month: 6 },
     logo: "student/ualberta_logo.jpg",
     location: "Edmonton, Canada",
-    skills: ["CS", "EE"],
+    skills: ["CS", "EE", "CivE", "BME"],
     url: "/ualberta",
   },
   {

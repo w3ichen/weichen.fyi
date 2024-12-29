@@ -10,11 +10,11 @@ interface Props {
 }
 export default function PageBase({ children }: Props) {
   return (
-    <>
+    <div>
       <Nav />
       {children}
       <Footer />
-    </>
+    </div>
   );
 }
 

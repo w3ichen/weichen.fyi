@@ -1,3 +1,46 @@
+import { LinkNewTab } from "@/components/Page/PageBase";
+import { TimelineListItemProp } from "@/components/TimelineList/TimelineListItem";
+import { ReactNode } from "react";
+
+export const CMU_RESEARCH_LABS: TimelineListItemProp[] = [
+  {
+    primary: (
+      <>
+        Dr. Aaron Johnson&apos;s
+        <br />
+        <LinkNewTab href="https://www.cmu.edu/me/robomechanicslab/">
+          <strong>Robomechanics Lab</strong>
+        </LinkNewTab>{" "}
+      </>
+    ),
+    startDate: { year: 2024, month: 3 },
+    endDate: "Present",
+  },
+  {
+    primary: (
+      <>
+        <LinkNewTab href="https://frc.ri.cmu.edu/">
+          Field Robotics Center&apos;s
+        </LinkNewTab>
+        <br />
+        PitMAGIC Lunar Pit Project{" "}
+      </>
+    ),
+    startDate: { year: 2024, month: 3 },
+    endDate: { year: 2024, month: 4 },
+  },
+];
+export const CMU_CERTIFICATES: (string | ReactNode)[] = [
+  <>
+    Physical Science Responsible Conduct of Research Course
+    <br />
+    Issued Dec 2023 by CITI Program{" "}
+    <LinkNewTab href="https://www.citiprogram.org/verify/?wcd8f3bec-b010-4ca3-b72d-6e8b46575b43-60172863">
+      [Credential ID: 60172863]
+    </LinkNewTab>
+  </>,
+];
+
 export const CMU_CLASSES: { [semester: string]: string[] } = {
   "Spring 2025": [
     "24-775 Bioinspired Robot Design and Experimentation",

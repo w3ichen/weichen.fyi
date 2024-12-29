@@ -15,6 +15,12 @@ const openSans = Open_Sans({
   subsets: ["latin"],
   display: "swap",
 });
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function RootLayout({
   children,
@@ -23,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <ThemeProvider theme={theme}>
-      <html lang="en" className={openSans.className}>
+      <html lang="en" className={`${openSans.className} ${roboto.className}`}>
         <Script
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
