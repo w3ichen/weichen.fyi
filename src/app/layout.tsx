@@ -4,6 +4,7 @@ import "./globals.css";
 import { theme } from "../constants/theme";
 import Script from "next/script";
 import { Open_Sans } from "next/font/google";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Weichen Qiu",
@@ -48,10 +49,13 @@ export default function RootLayout({
               })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
             `}
         </Script>
-        <body>
-          <CssBaseline />
-          {children}
-        </body>
+        {/* Suspense needed for useSearchParams to work: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout */}
+        <Suspense fallback={null}>
+          <body>
+            <CssBaseline />
+            {children}
+          </body>
+        </Suspense>
       </html>
     </ThemeProvider>
   );

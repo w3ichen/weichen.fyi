@@ -20,7 +20,7 @@ export default function HomePage() {
       // Default role
       setRole(ROLES.ROBOTICIST);
     }
-  }, []);
+  }, [searchParams]);
 
   if (!role) return null;
   return (
