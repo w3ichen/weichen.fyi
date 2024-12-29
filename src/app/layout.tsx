@@ -3,11 +3,17 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { theme } from "../constants/theme";
 import Script from "next/script";
+import { Open_Sans } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Weichen Qiu",
   description: "Weichen Qiu's Portfolio",
 };
+// Import fonts
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -16,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <ThemeProvider theme={theme}>
-      <html lang="en">
+      <html lang="en" className={openSans.className}>
         <Script
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
