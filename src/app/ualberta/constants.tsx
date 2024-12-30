@@ -56,7 +56,7 @@ export const UALBERTA_AWARDS: (string | ReactNode)[] = [
   "Ledcor Undergraduate Scholarship in Construction Engineering and Management (2022)",
   "Faculty of Engineering Academic Excellence Scholarship (2018)",
   "Advanced Placement Scholarship (2018)",
-  "Jason Lang Scholarship (2019, 2020, 2021)",
+  "Jason Lang Scholarship, GPA ≥ 3.2 (2019, 2020, 2021)",
 ];
 
 export const UALBERTA_CERTIFICATES: (string | ReactNode)[] = [
@@ -126,7 +126,7 @@ export const UALBERTA_VOLUNTEERING: TimelineListItemProp[] = [
     endDate: { year: 2021, month: 4 },
   },
   {
-    primary: "Media Team Senior Volunteer",
+    primary: "UASUevents Media Team",
     secondary: (
       <>
         UAlberta Students&apos; Union (

@@ -11,6 +11,7 @@ import {
   UALBERTA_VOLUNTEERING,
 } from "./constants";
 import TimelineList from "@/components/TimelineList/TimelineList";
+import CaptionedImage from "@/components/HeroImage/CaptionedImage";
 
 const Root = styled(Container)(({}) => ({
   fontFamily: "Roboto", // Open Sans is UAlberta's official font
@@ -193,6 +194,18 @@ export default function UAlbertaPage() {
           Volunteering
         </Typography>
         <TimelineList items={UALBERTA_VOLUNTEERING} />
+        <CaptionedImage
+          src="student/uasu_media_img1.jpg"
+          caption={`“First year Engineering student Weichen Qiu is framed by a giant board game as he takes photographs during University of Alberta welcome week activities in the school's quad, in Edmonton Wednesday Sept. 4, 2019. Photo by David Bloom.”`}
+          title="UASUevents Media Team"
+          links={[
+            {
+              url: "https://edmontonjournal.com/year-in-review/year-in-review-david-blooms-top-photos-of-2019",
+              text: "[Edmonton Journal] Year in Review: David Bloom's top photos of 2019",
+            },
+          ]}
+          mt={5}
+        />
 
         <Typography variant="h5" pt={HEADER_PT}>
           Coursework

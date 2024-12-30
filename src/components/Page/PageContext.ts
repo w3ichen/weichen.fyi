@@ -23,10 +23,10 @@ export interface TimelineDetail {
 }
 
 interface PageContextInterface {
-  role: Role;
+  role: Role | undefined;
   setRole: (role: Role) => void;
 }
 export const PageContext = React.createContext<PageContextInterface>({
-  role: ROLES.ROBOTICIST,
+  role: undefined,
   setRole: () => {},
 });

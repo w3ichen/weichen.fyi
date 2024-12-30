@@ -40,6 +40,8 @@ export default function CmuPage() {
           </strong>
           <br />
           Jan 2024 - May 2025 | Pittsburgh, USA
+          <br />
+          <em>* Graduated on May 11, 2025</em>
         </Typography>
 
         <Typography variant="h5" pt={HEADER_PT}>

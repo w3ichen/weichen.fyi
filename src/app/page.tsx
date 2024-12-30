@@ -16,9 +16,6 @@ export default function HomePage() {
     const roleParam = searchParams.get("is");
     if (roleParam && Object.values(ROLES).includes(roleParam as Role)) {
       setRole(roleParam as Role);
-    } else {
-      // Default role
-      setRole(ROLES.ROBOTICIST);
     }
   }, [searchParams]);
 
