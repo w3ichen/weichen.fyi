@@ -4,17 +4,23 @@ import Link, { LinkProps } from "next/link";
 import Footer from "../Footer/Footer";
 import Nav from "../Nav/Nav";
 import { ReactNode } from "react";
+import { PageContext, Role } from "./PageContext";
+import React from "react";
 
 interface Props {
   children: React.ReactNode;
 }
 export default function PageBase({ children }: Props) {
+  const [role, setRole] = React.useState<Role | null>(null);
+
   return (
-    <div>
-      <Nav />
-      {children}
-      <Footer />
-    </div>
+    <PageContext.Provider value={{ role, setRole }}>
+      <div>
+        <Nav />
+        {children}
+        <Footer />
+      </div>
+    </PageContext.Provider>
   );
 }
 

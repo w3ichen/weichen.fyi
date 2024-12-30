@@ -8,6 +8,7 @@ import { student_details } from "@/constants/roles/student";
 import MuiTimeline from "@mui/lab/Timeline";
 import React from "react";
 import TimelineEntry from "./TimelineEntry";
+import { get } from "lodash";
 
 const roles_details: { [role: Role]: TimelineDetail[] } = {
   [ROLES.ROBOTICIST]: student_details,
@@ -19,7 +20,7 @@ const roles_details: { [role: Role]: TimelineDetail[] } = {
 
 export default function Timeline() {
   const { role } = React.useContext(PageContext);
-  const role_detail = roles_details[role];
+  const role_detail = get(roles_details, role || "", []);
 
   return (
     <MuiTimeline position="right" sx={{ mt: 1, mb: 6, p: 0 }}>

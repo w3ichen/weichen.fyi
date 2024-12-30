@@ -16,6 +16,7 @@ const openSans = Open_Sans({
   display: "swap",
 });
 import { Roboto } from "next/font/google";
+import PageBase from "@/components/Page/PageBase";
 
 const roboto = Roboto({
   weight: "400",
@@ -59,7 +60,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <body>
             <CssBaseline />
-            {children}
+            <PageBase>{children}</PageBase>
           </body>
         </Suspense>
       </html>
