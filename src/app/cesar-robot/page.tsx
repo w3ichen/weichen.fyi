@@ -1,8 +1,6 @@
 "use client";
 
-import CaptionedImage, {
-  CAP_IMG_MAX_HEIGHT,
-} from "@/components/HeroImage/CaptionedImage";
+import CaptionedImage from "@/components/HeroImage/CaptionedImage";
 import CaptionedVideo from "@/components/HeroImage/CaptionedVideo";
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
@@ -10,11 +8,6 @@ import TitleWithLogo from "@/components/Page/TitleWithLogo";
 import { Container, styled } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
-
-const croppedImgStyle = {
-  height: CAP_IMG_MAX_HEIGHT + "px",
-  backgroundColor: "black",
-};
 
 export default function CesarRobotPage() {
   return (
