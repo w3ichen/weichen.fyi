@@ -1,9 +1,10 @@
 "use client";
 
 import CaptionedIframe from "@/components/HeroImage/CaptionedIframe";
-import CaptionedImage, {
-  CAP_IMG_MAX_HEIGHT,
-} from "@/components/HeroImage/CaptionedImage";
+import CaptionedImage from "@/components/HeroImage/CaptionedImage";
+import CaptionedVideo, {
+  CAP_VIDEO_MAX_HEIGHT,
+} from "@/components/HeroImage/CaptionedVideo";
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
 import TitleWithLogo from "@/components/Page/TitleWithLogo";
@@ -12,7 +13,7 @@ import { Container, styled } from "@mui/material";
 const Root = styled(Container)(({}) => ({}));
 
 const croppedImgStyle = {
-  height: CAP_IMG_MAX_HEIGHT + "px",
+  height: CAP_VIDEO_MAX_HEIGHT + "px",
   backgroundColor: "black",
 };
 
@@ -68,42 +69,42 @@ export default function PatrickRobotPage() {
         imgPosition="right"
         mt={2}
       />
-      <CaptionedImage
-        src="roboticist/patrick_gazebo_arm.gif"
+      <CaptionedVideo
+        src="roboticist/patrick_gazebo_arm.mp4"
         title="Gazebo Simulator"
         caption="I developed Patrick's simulation in Gazebo from scratch. I assembled the URDF file to define its structure and integrated move_base for wheeled navigation, along with an arm trajectory controller to raise and lower the arm."
         mt={2}
         imgProps={{
-          // This is to crop out the shorter image and re-center it
+          // This is to crop out the shorter video and re-center it
           style: {
             ...croppedImgStyle,
             width: "78%",
-            objectPosition: "55% center", // Shifts to center image
+            objectPosition: "55% center", // Shifts to center video
           },
         }}
       />
-      <CaptionedImage
-        src="roboticist/patrick_rviz_gradmap.gif"
+      <CaptionedVideo
+        src="roboticist/patrick_rviz_gradmap.mp4"
         title="RViz Visualization"
         caption="Using the publish point tool, I implemented a user-defined search boundary to specify the area of interest. I also visualized the contamination gradient map, which updates in real-time, along with the real robot's roll, pitch, and yaw."
         mt={2}
         imgPosition="right"
         imgProps={{
-          // This is to crop out the shorter image and re-center it
+          // This is to crop out the shorter video and re-center it
           style: {
             ...croppedImgStyle,
             width: "79%",
-            objectPosition: "51% center", // Shifts to center image
+            objectPosition: "51% center", // Shifts to center video
           },
         }}
       />
-      <CaptionedImage
-        src="roboticist/patrick_ros_nav.gif"
+      <CaptionedVideo
+        src="roboticist/patrick_ros_nav.mp4"
         title="ROS Navigation Stack"
         caption="I implemented the ROS navigation stack in simulation, using LiDAR for object detection and map creation. The robot autonomously path plans to the next sampling location, avoiding obstacles with SLAM and costmaps."
         mt={2}
         imgProps={{
-          // This is to crop out the shorter image and re-center it
+          // This is to crop out the shorter video and re-center it
           style: {
             ...croppedImgStyle,
             width: "80%",

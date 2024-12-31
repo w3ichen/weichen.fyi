@@ -25,6 +25,7 @@ interface Props extends Omit<CaptionedBaseProps, "children"> {
   autoPlay?: boolean;
   muted?: boolean;
   loop?: boolean;
+  controls?: boolean;
 }
 export default function CaptionedVideo({
   src,
@@ -33,6 +34,7 @@ export default function CaptionedVideo({
   autoPlay = true,
   muted = true,
   loop = true,
+  controls = true,
   ...rest
 }: Props) {
   return (
@@ -43,6 +45,8 @@ export default function CaptionedVideo({
         muted={autoPlay || muted} // Must be muted for autoPlay to work
         loop={loop}
         unconstrained={unconstrained}
+        controls={controls}
+        controlsList="nodownload" // Disable download button
         {...imgProps}
       />
     </CaptionedBase>
