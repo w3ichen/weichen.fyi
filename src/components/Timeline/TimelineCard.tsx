@@ -1,13 +1,12 @@
 import { TimelineDetail } from "@/components/Page/PageContext";
-import { SKILL_TYPES_COLORS, SKILLS } from "@/constants/skills";
 import { UnfoldMore } from "@mui/icons-material";
-import { CardActions, Chip, ChipProps, Stack, styled } from "@mui/material";
+import { CardActions, Stack, styled } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { get } from "lodash";
 import Link from "next/link";
+import SkillChip from "../SkillChip/SkillChip";
 
 const StyledCard = styled(Card)(({ theme }) => ({
   maxWidth: 400,
@@ -41,39 +40,26 @@ export default function TimelineCard({
 }: TimelineDetail) {
   return (
     <StyledCard variant="outlined">
-      <Link href={url} passHref style={{ color: "inherit" }}>
-        <CardActionArea>
-          <CardContent>
+      <CardActionArea>
+        <Link href={url} passHref style={{ color: "inherit" }}>
+          <CardContent sx={{ pb: "5px !important" }}>
             <Typography variant="subtitle1" fontWeight={500}>
               {position}
             </Typography>
             <Typography variant="subtitle2">{company}</Typography>
             <Typography variant="caption">{location}</Typography>
           </CardContent>
-          <CardActions sx={{ mt: 0, pt: 0 }}>
-            <Stack direction="row" spacing={1} width="100%">
-              {skills.map((skill, i) => {
-                const skill_type = get(SKILLS, skill, "default");
-                const color = get(
-                  SKILL_TYPES_COLORS,
-                  skill_type,
-                  "default"
-                ) as ChipProps["color"];
-                return (
-                  <Chip
-                    key={`skill-${skill}-${i}`}
-                    label={skill}
-                    size="small"
-                    variant="outlined"
-                    color={color}
-                  />
-                );
-              })}
-            </Stack>
-            <UnfoldMore color="action" />
-          </CardActions>
-        </CardActionArea>
-      </Link>
+        </Link>
+
+        <CardActions sx={{ mt: 0, pt: 0 }}>
+          <Stack direction="row" width="100%" flexWrap="wrap">
+            {skills.map((skill, i) => (
+              <SkillChip key={`skill-${i}`} skill={skill} />
+            ))}
+            <UnfoldMore color="action" sx={{ ml: "auto" }} />
+          </Stack>
+        </CardActions>
+      </CardActionArea>
     </StyledCard>
   );
 }

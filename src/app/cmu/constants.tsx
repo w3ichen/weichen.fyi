@@ -1,4 +1,4 @@
-import { LinkNewTab } from "@/components/Page/PageBase";
+import LinkNewTab from "@/components/Buttons/LinkNewTab";
 import { TimelineListItemProp } from "@/components/TimelineList/TimelineListItem";
 import { ReactNode } from "react";
 

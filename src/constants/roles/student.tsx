@@ -1,6 +1,6 @@
 import { TimelineDetail } from "../../components/Page/PageContext";
 
-export const student_details: TimelineDetail[] = [
+export const STUDENT_DETAILS: TimelineDetail[] = [
   {
     company: "Carnegie Mellon University",
     position: "MS in Electrical and Computer Engineering",

@@ -6,6 +6,7 @@ import {
   styled,
   Theme,
   Typography,
+  useTheme,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 
@@ -32,6 +33,7 @@ const SocialButton = styled(({ ...props }: SocialButtonProps) => (
 }));
 
 export default function Socials() {
+  const theme = useTheme();
   return (
     <Grid size={{ xs: 12, md: 5 }}>
       <Stack
@@ -45,12 +47,15 @@ export default function Socials() {
         </Typography>
         <Stack direction="row" spacing={2}>
           <SocialButton
-            hovercolor="#0072b1"
+            hovercolor={theme.palette.linkedinBlue!.light!}
             href="https://www.linkedin.com/in/weichen-q"
           >
             <LinkedIn fontSize="large" />
           </SocialButton>
-          <SocialButton hovercolor="#333" href="https://github.com/w3ichen">
+          <SocialButton
+            hovercolor={theme.palette.githubBlack!.light!}
+            href="https://github.com/w3ichen"
+          >
             <GitHub fontSize="large" />
           </SocialButton>
         </Stack>

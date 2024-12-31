@@ -2,7 +2,7 @@
 
 import CaptionedImage from "@/components/HeroImage/CaptionedImage";
 import { HeroImageBase } from "@/components/HeroImage/common";
-import { LinkNewTab } from "@/components/Page/PageBase";
+import LinkNewTab from "@/components/Buttons/LinkNewTab";
 import TimelineList from "@/components/TimelineList/TimelineList";
 import { Container, styled, Typography } from "@mui/material";
 import {

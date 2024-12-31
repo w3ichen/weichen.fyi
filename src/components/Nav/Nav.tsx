@@ -14,11 +14,15 @@ const Root = styled("nav")(({ theme }) => ({
   backgroundColor: "rgba(255, 255, 255, 0.9)", // Translucent background
   height: "fit-content",
   zIndex: 5,
+  fontFamily: "Georgia",
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
     textAlign: "center",
     alignItems: "center",
     padding: "15px",
+  },
+  "& .MuiTypography-root": {
+    fontFamily: "inherit",
   },
 }));
 
@@ -39,10 +43,10 @@ export default function Nav() {
     <Root>
       <Link href="/" passHref style={{ color: "inherit" }}>
         <Stack direction="row" gap={0.5}>
-          <Typography variant="h5" fontWeight={1000} fontFamily="Georgia">
+          <Typography variant="h5" fontWeight={1000}>
             weichen
           </Typography>
-          <Typography variant="h5" fontWeight={400} fontFamily="Georgia">
+          <Typography variant="h5" fontWeight={400}>
             qiu
           </Typography>
         </Stack>

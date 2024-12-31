@@ -150,6 +150,26 @@ const QUOTES: Quote[] = [
       "Life isn't about finding yourself. Life is about creating yourself.",
     author: "George Bernard Shaw",
   },
+  { quote: "Stay hungry, stay foolish.", author: "Steve Jobs" },
+  {
+    quote:
+      "The people who are crazy enough to think they can change the world are the ones who do.",
+    author: "Steve Jobs",
+  },
+  {
+    quote:
+      "You can't connect the dots looking forward; you can only connect them looking backwards. So you have to trust that the dots will somehow connect in your future.",
+    author: "Steve Jobs",
+  },
+  {
+    quote: "It does not do to dwell on dreams and forget to live.",
+    author: "J.K. Rowling",
+  },
+  {
+    quote:
+      "Knowing how to think empowers you far beyond those who know only what to think.",
+    author: "Neil deGrasse Tyson",
+  },
 ];
 
 const getRandomQuote = () => {

@@ -1,15 +1,22 @@
 "use client";
 
 import HeroImage from "@/components/HeroImage/HomeHeroImage";
-import { PageContext, Role, ROLES } from "@/components/Page/PageContext";
+import {
+  PageContext,
+  Role,
+  ROLES,
+  TIMELINE_DETAILS,
+} from "@/components/Page/PageContext";
 import Timeline from "@/components/Timeline/Timeline";
 import { Container } from "@mui/material";
+import { get } from "lodash";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect } from "react";
 
 export default function HomePage() {
   const searchParams = useSearchParams();
   const { role, setRole } = React.useContext(PageContext);
+  const timelineEntries = get(TIMELINE_DETAILS, role || "", []);
 
   const onPageLoad = () => {
     const roleParam = searchParams.get("is");
@@ -29,7 +36,7 @@ export default function HomePage() {
   return (
     <Container maxWidth="xl">
       <HeroImage />
-      <Timeline />
+      <Timeline details={timelineEntries} />
     </Container>
   );
 }

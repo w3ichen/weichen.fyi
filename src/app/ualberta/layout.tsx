@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Weichen Qiu | UAlberta",
+  title: "UAlberta | Weichen Qiu",
   description: "Weichen @ University of Alberta",
 };
 

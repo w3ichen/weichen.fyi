@@ -5,7 +5,7 @@ import React from "react";
 
 const StyledTypography = styled(Typography)(
   ({ theme, selected }: { theme?: Theme; selected: boolean }) => ({
-    fontFamily: theme?.typography.fontFamily,
+    fontFamily: "Georgia !important",
     color: selected
       ? theme?.palette.text.primary
       : theme?.palette.text.disabled,

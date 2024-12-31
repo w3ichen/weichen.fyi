@@ -1,6 +1,6 @@
 import { Box, Stack, StackProps, styled, Typography } from "@mui/material";
-import { LinkNewTab } from "../Page/PageBase";
 import { ReactNode } from "react";
+import LinkNewTab from "../Buttons/LinkNewTab";
 
 const MediaContainer = styled("div")({
   display: "flex",

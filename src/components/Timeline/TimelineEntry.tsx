@@ -14,13 +14,14 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
   year: "numeric",
 });
-const LOGO_SIZE = 80;
+const DOT_SIZE = 80;
+const SMALL_DOT_SIZE = 12; // Default small dot width
 const LEFT_WIDTH_SM = "20vw"; // For small screens, force the width to be 20vw
 
 const StyledTimelineDot = styled(TimelineDot)(({}) => ({
   overflow: "hidden",
-  width: LOGO_SIZE + "px",
-  height: LOGO_SIZE + "px",
+  width: DOT_SIZE + "px",
+  height: DOT_SIZE + "px",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -66,14 +67,20 @@ export default function TimelineEntry(props: TimelineDetail) {
       </OppositeContent>
       <TimelineSeparator>
         <TimelineConnector />
-        <StyledTimelineDot>
-          <img
-            src={logo}
-            alt={company}
-            width={LOGO_SIZE - 4 + "px"}
-            height={LOGO_SIZE - 4 + "px"}
-          />
-        </StyledTimelineDot>
+        {!!logo ? (
+          <StyledTimelineDot>
+            <img
+              src={logo}
+              alt={company}
+              // -4px to make the image slightly smaller than the dot
+              width={DOT_SIZE - 4 + "px"}
+              height={DOT_SIZE - 4 + "px"}
+            />
+          </StyledTimelineDot>
+        ) : (
+          <TimelineDot sx={{ mx: (DOT_SIZE - SMALL_DOT_SIZE) / 2 + "px" }} />
+        )}
+
         <TimelineConnector />
       </TimelineSeparator>
       <TimelineContent sx={{ py: "12px", pl: { xs: 1, sm: 3 }, pr: 0 }}>
