@@ -44,8 +44,14 @@ export default function CesarRobotPage() {
       <CaptionedVideo
         src="roboticist/cesar_driving.mp4"
         title="The Hardware"
-        caption="Patrick features a 4-wheeled robot base paired with a 4-DOF arm and a pXRF sensor for precise in-situ soil sampling."
+        caption="I revived the CESAR robot after years in storage with minimal guidance or documentation. I reconnected all hardware and wiring, including the joystick, and tested components such as cameras, GPS, Wi-Fi, and motors to ensure they worked. I also refactored the code to resolve issues."
         imgPosition="right"
+        mt={2}
+      />
+      <CaptionedVideo
+        src="roboticist/cesar_arm.mp4"
+        title="Dynamixel Arm"
+        caption="I debugged a misconfigured Dynamixel motor using the Dynamixel Wizard and got the arm working to raise and lower as intended, resolving the issue independently."
         mt={2}
       />
     </Root>

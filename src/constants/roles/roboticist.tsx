@@ -8,7 +8,7 @@ export const ROBOTICIST_DETAILS: TimelineDetail[] = [
     endDate: "Present",
     logo: "roboticist/patrick_logo.jpg",
     location: "Pittsburgh, USA",
-    skills: ["Python", "ROS1", "Gazebo", "RViz", "Linux"],
+    skills: ["Robotics", "Python", "ROS1", "Gazebo", "RViz", "Linux"],
     url: "/patrick-robot",
   },
   {
@@ -18,7 +18,7 @@ export const ROBOTICIST_DETAILS: TimelineDetail[] = [
     endDate: { year: 2024, month: 12 },
     logo: "roboticist/hasselhoff_bot_logo.jpg",
     location: "Pittsburgh, USA",
-    skills: ["C", "Hardware", "Circuits", "Embedded", "Soldering"],
+    skills: ["Robotics", "C", "Hardware", "Circuits", "Embedded", "Soldering"],
     url: "/hasselhoff-bot",
   },
   {
@@ -28,7 +28,7 @@ export const ROBOTICIST_DETAILS: TimelineDetail[] = [
     endDate: "Present",
     logo: "roboticist/cesar_logo.png",
     location: "Pittsburgh, USA",
-    skills: ["Python", "ROS1", "Hardware", "Linux"],
+    skills: ["Robotics", "Python", "ROS1", "Hardware", "Linux"],
     url: "/cesar-robot",
   },
 ];
