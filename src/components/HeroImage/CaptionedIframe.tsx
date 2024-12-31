@@ -12,14 +12,21 @@ const StyledIframe = styled("iframe")({
 
 interface Props extends Omit<CaptionedBaseProps, "children"> {
   src: string;
+  autoPlay?: boolean;
 }
-export default function CaptionedIframe({ src, ...rest }: Props) {
+export default function CaptionedIframe({
+  src: iframeSrc,
+  autoPlay = false,
+  ...rest
+}: Props) {
   /**
    * allowFullScreen: Allows the iframe to be displayed in full screen mode.
    * frameBorder: Removes the border around the iframe.
    * allow: Allows the iframe to use certain features like accelerometer, autoplay, clipboard-write, encrypted-media, gyroscope, picture-in-picture, and web-share.
    * referrerPolicy: Specifies which referrer information to send when fetching the iframe.
    */
+  // Autoplay from youtube needs to be muted
+  const src = autoPlay ? `${iframeSrc}?&autoplay=1&mute=1` : iframeSrc;
   return (
     <CaptionedBase {...rest}>
       <StyledIframe

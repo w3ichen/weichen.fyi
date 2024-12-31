@@ -16,7 +16,7 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 });
 const DOT_SIZE = 80;
 const SMALL_DOT_SIZE = 12; // Default small dot width
-const LEFT_WIDTH_SM = "20vw"; // For small screens, force the width to be 20vw
+const LEFT_WIDTH_SM = "21vw"; // For small screens, force the width to be 20vw
 
 const StyledTimelineDot = styled(TimelineDot)(({}) => ({
   overflow: "hidden",
@@ -26,7 +26,6 @@ const StyledTimelineDot = styled(TimelineDot)(({}) => ({
   justifyContent: "center",
   alignItems: "center",
 }));
-
 const OppositeContent = styled(TimelineOppositeContent)(({ theme }) => ({
   margin: "auto 0",
   paddingRight: theme.spacing(3),
@@ -39,6 +38,12 @@ const OppositeContent = styled(TimelineOppositeContent)(({ theme }) => ({
     width: LEFT_WIDTH_SM,
     minWidth: LEFT_WIDTH_SM,
     paddingRight: theme.spacing(1),
+  },
+}));
+const Dash = styled("span")(({ theme }) => ({
+  display: "inline",
+  [theme.breakpoints.down("sm")]: {
+    display: "none", // On small screens, hide the dash
   },
 }));
 
@@ -63,7 +68,14 @@ export default function TimelineEntry(props: TimelineDetail) {
   return (
     <TimelineItem>
       <OppositeContent variant="body2">
-        <ListItemText primary={`${start} - ${end}`} secondary={duration} />
+        <ListItemText
+          primary={
+            <>
+              {start} <Dash>-</Dash> {end}
+            </>
+          }
+          secondary={duration}
+        />
       </OppositeContent>
       <TimelineSeparator>
         <TimelineConnector />

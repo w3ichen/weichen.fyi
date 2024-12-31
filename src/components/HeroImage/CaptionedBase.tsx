@@ -39,7 +39,7 @@ export default function CaptionedBase({
     direction = { sm: "column", md: "row-reverse" };
   }
   return (
-    <Stack direction={direction} spacing={5} {...rest}>
+    <Stack direction={direction} spacing={5} mx="auto" {...rest}>
       <MediaContainer>{children}</MediaContainer>
 
       <CaptionContainer textAlign={imgPosition}>
