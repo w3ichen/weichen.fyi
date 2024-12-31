@@ -30,7 +30,7 @@ export default function PatrickRobotPage() {
       />
 
       <ProjectMetadata
-        skills={["Robotics", "Python", "ROS1", "Gazebo", "RViz"]}
+        skills={["Robotics", "Python", "ROS1", "Gazebo", "RViz", "Linux"]}
         buttons={[
           {
             url: "https://www.cmu.edu/me/robomechanicslab",
@@ -57,7 +57,7 @@ export default function PatrickRobotPage() {
 
       <CaptionedIframe
         src="https://www.youtube.com/embed/sSsalqQzWrk?si=aFP2ZnhJ5EArPcgW"
-        title="The Problem Patrick Solves"
+        title="The Motivation"
         caption="Manual soil sampling is inefficient, expensive, and prone to human error. Patrick leverages advanced robotics, adaptive sampling algorithms, and in-situ analysis capabilities to navigate challenging terrains, identify optimal sampling locations, and generate accurate contamination maps. Designed for hazardous industrial sites, Patrick improves sampling efficiency while minimizing human exposure."
         mt={2}
       />
