@@ -50,6 +50,7 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Soldering: "HARDWARE",
   Circuits: "HARDWARE",
   Embedded: "HARDWARE",
+  "Embedded Systems": "HARDWARE",
   Arduino: "HARDWARE",
   // Platform
   Linux: "PLATFORM",
