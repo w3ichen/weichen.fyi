@@ -4,6 +4,7 @@ import { Skill } from "../SkillChip/constants";
 import { ROBOTICIST_DETAILS } from "@/constants/roles/roboticist";
 import { STUDENT_DETAILS } from "@/constants/roles/student";
 import { CREATOR_DETAILS } from "@/constants/roles/creator";
+import { ENTREPRENEUR_DETAILS } from "@/constants/roles/entrepreneur";
 
 export const ROLES = {
   ROBOTICIST: "roboticist",
@@ -36,7 +37,7 @@ export const PageContext = React.createContext<PageContextInterface>({
 
 export const TIMELINE_DETAILS: { [role: Role]: TimelineDetail[] } = {
   [ROLES.ROBOTICIST]: ROBOTICIST_DETAILS,
-  [ROLES.ENTREPRENEUR]: STUDENT_DETAILS,
+  [ROLES.ENTREPRENEUR]: ENTREPRENEUR_DETAILS,
   [ROLES.SWE]: STUDENT_DETAILS,
   [ROLES.STUDENT]: STUDENT_DETAILS,
   [ROLES.CREATOR]: CREATOR_DETAILS,

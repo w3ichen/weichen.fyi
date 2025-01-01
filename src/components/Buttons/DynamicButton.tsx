@@ -8,6 +8,7 @@ import {
   YouTube,
 } from "@mui/icons-material";
 import ButtonsBase from "./ButtonsBase";
+import { FaAppStoreIos } from "react-icons/fa";
 
 export type ButtonType =
   | "github"
@@ -16,7 +17,8 @@ export type ButtonType =
   | "linkedin"
   | "web"
   | "youtube"
-  | "instagram";
+  | "instagram"
+  | "appstore";
 
 export interface DynamicButtonProps {
   url: string;
@@ -65,6 +67,16 @@ export default function DynamicButton({ url, text, type }: DynamicButtonProps) {
     case "instagram":
       return (
         <ButtonsBase startIcon={<Instagram />} color="instagramPink" href={url}>
+          {text}
+        </ButtonsBase>
+      );
+    case "appstore":
+      return (
+        <ButtonsBase
+          startIcon={<FaAppStoreIos />}
+          color="appstoreBlue"
+          href={url}
+        >
           {text}
         </ButtonsBase>
       );

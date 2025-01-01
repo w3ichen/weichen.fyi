@@ -19,6 +19,7 @@ declare module "@mui/material/styles" {
     linkedinBlue?: SimplePaletteColorOptions;
     youtubeRed?: SimplePaletteColorOptions;
     instagramPink?: SimplePaletteColorOptions;
+    appstoreBlue?: SimplePaletteColorOptions;
   }
   interface Palette extends CustomPalette {}
   interface PaletteOptions extends CustomPalette {}
@@ -29,6 +30,7 @@ declare module "@mui/material/Button" {
     linkedinBlue: true;
     youtubeRed: true;
     instagramPink: true;
+    appstoreBlue: true;
   }
 }
 ///////////////////////////////////////////////////////////////////////////////
@@ -53,6 +55,7 @@ theme = createTheme({
     linkedinBlue: createColor("#0072b1"),
     youtubeRed: createColor("#FF0000"),
     instagramPink: createColor("#c13584"),
+    appstoreBlue: createColor("#1c7cf2"),
   },
   typography: {
     fontFamily: "Helvetica, Arial, sans-serif",

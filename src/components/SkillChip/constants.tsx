@@ -30,7 +30,18 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Hardware: "CATEGORY",
   CAD: "CATEGORY",
   Animation: "CATEGORY",
-  "Social Media": "CATEGORY",
+  Startup: "CATEGORY",
+  Healthcare: "CATEGORY",
+  Engineering: "CATEGORY",
+  "3D": "CATEGORY",
+  // LANGUAGE
+  Python: "LANGUAGE",
+  C: "LANGUAGE",
+  HTML: "LANGUAGE",
+  CSS: "LANGUAGE",
+  JavaScript: "LANGUAGE",
+  TypeScript: "LANGUAGE",
+  SQL: "LANGUAGE",
   // LIBRARY
   ROS1: "LIBRARY",
   Gazebo: "LIBRARY",
@@ -39,13 +50,14 @@ export const SKILLS: { [skill: string]: SkillType } = {
   PyTorch: "LIBRARY",
   NextJS: "LIBRARY",
   ReactJS: "LIBRARY",
-  // LANGUAGE
-  Python: "LANGUAGE",
-  C: "LANGUAGE",
-  HTML: "LANGUAGE",
-  CSS: "LANGUAGE",
-  JavaScript: "LANGUAGE",
-  TypeScript: "LANGUAGE",
+  ThreeJS: "LIBRARY",
+  Open3D: "LIBRARY",
+  Trimesh: "LIBRARY",
+  "Material UI": "LIBRARY",
+  Django: "LIBRARY",
+  PostgreSQL: "LIBRARY",
+  Stripe: "LIBRARY",
+  Langchain: "LIBRARY",
   // HARDWARE
   Soldering: "HARDWARE",
   Circuits: "HARDWARE",
@@ -57,7 +69,8 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Docker: "PLATFORM",
   Kubernetes: "PLATFORM",
   AWS: "PLATFORM",
-  "Digital Ocean": "PLATFORM",
+  DigitalOcean: "PLATFORM",
+  iOS: "PLATFORM",
   // Application
   Unity: "APPLICATION",
   SolidWorks: "APPLICATION",
@@ -68,6 +81,8 @@ export const SKILLS: { [skill: string]: SkillType } = {
   "Conflict Resolution": "SOFT_SKILL",
   "Public Speaking": "SOFT_SKILL",
   Networking: "SOFT_SKILL",
+  "Social Media": "SOFT_SKILL",
+  Negotiation: "SOFT_SKILL",
 };
 
 export type Skill = keyof typeof SKILLS;
