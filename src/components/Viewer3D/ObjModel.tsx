@@ -4,7 +4,7 @@ import { MTLLoader, OBJLoader } from "three-stdlib";
 
 interface Props {
   objFile: string;
-  textureFile: string;
+  textureFile?: string;
 }
 
 /**
@@ -16,10 +16,12 @@ interface Props {
  * @returns ThreeJS <mesh> object
  */
 export default function ObjModel({ objFile, textureFile }: Props) {
-  const materials = useLoader(MTLLoader, textureFile);
+  const materials = useLoader(MTLLoader, textureFile || "");
   const object = useLoader(OBJLoader, objFile, (loader) => {
-    materials.preload();
-    loader.setMaterials(materials);
+    if (!!textureFile) {
+      materials.preload();
+      loader.setMaterials(materials);
+    }
   });
 
   return <primitive object={object} />;

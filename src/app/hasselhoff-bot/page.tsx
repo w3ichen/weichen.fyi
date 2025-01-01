@@ -1,13 +1,15 @@
 "use client";
 
+import CaptionedIframe from "@/components/HeroImage/CaptionedIframe";
 import CaptionedImage from "@/components/HeroImage/CaptionedImage";
 import CaptionedVideo from "@/components/HeroImage/CaptionedVideo";
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
-import Viewer3D from "@/components/Viewer3D/Viewer3D";
+import Viewer3DWithImage from "@/components/Viewer3D/Viewer3DWithImage";
 import { Container, styled, Typography } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
+const HEADER_PT = 4;
 
 export default function HasselhoffBotPage() {
   return (
@@ -27,32 +29,56 @@ export default function HasselhoffBotPage() {
           "Soldering",
           "Embedded",
           "Embedded Systems",
-          "STM32 Nucleo Board",
+          "Nucleo STM32 Board",
           "16878 Advanced Mechatronic Design Class",
         ]}
       />
+      <CaptionedIframe
+        src="https://www.youtube.com/embed/ljnBSBY5iik?si=eJXdFFbEcu_MqtOJ"
+        title="The Mission"
+        caption="The Hasselhoff Bot is a small submarine inspired by David Hasselhoff's cameo in the 2004 SpongeBob Movie. In the movie, SpongeBob and Patrick explore the ocean in search of King Neptune's crown to cover his shiny, bald head and David Hasselhoff is the last “vehicle” that propels the two friends back to Bikini Bottom, where they return the crown to King Neptune."
+        mt={2}
+      />
+      <CaptionedVideo
+        src="roboticist/hasselhoff_demo.mp4"
+        title="How it works"
+        imgPosition="right"
+        caption="Hasselhoff is a teleoperated submarine equipped with four waterproof motors, an IR beam receiver, and a tethered remote. Users have 99 seconds to navigate underwater, locate an IR beam, and land on its source. Powered by a Nucleo STM32 and a 14.8V Li-ion battery, it communicates with the remote via SPI protocol."
+        mt={2}
+      />
 
-      <Viewer3D
-        objFile="roboticist/hasselhoff_body.obj"
-        textureFile="roboticist/hasselhoff_body.mtl"
+      <Typography variant="h5" pt={HEADER_PT}>
+        Remote Control
+      </Typography>
+      <Viewer3DWithImage
+        glbFile="roboticist/patrick.glb"
+        imgSrc="roboticist/hasselhoff_remote_cad.png"
       />
       <CaptionedImage
-        src="roboticist/cesar_parts.jpg"
-        title="The Motivation"
-        caption="Manual soil sampling is inefficient, costly, and prone to human error. CESAR offers a cost-effective solution with off-the-shelf components, leveraging teleoperation or waypoint navigation for in-situ soil sampling. Designed for hazardous industrial sites, CESAR enhances sampling efficiency while minimizing human exposure."
-        mt={2}
+        src="roboticist/hasselhoff_schematic.png"
+        title="The Electronics"
+        caption="I designed the electrical schematic, which includes 5 LEDs, 2 joysticks, an LED display, and a potentiometer. I first prototyped the design on breadboards and then transferred it to protoboards for the final prototype. I also developed C code to program the Nucleo’s GPIO pins, configure timers, ADCs, and DMAs, and implement a state machine."
+        mt={3}
       />
-      <CaptionedVideo
-        src="roboticist/cesar_driving.mp4"
-        title="The Hardware"
-        caption="I revived the CESAR robot after years in storage with minimal guidance or documentation. I reconnected all hardware and wiring, including the joystick, and tested components such as cameras, GPS, Wi-Fi, and motors to ensure they worked. I also refactored the code to resolve issues."
+      <CaptionedImage
+        src="roboticist/hasselhoff_remote.jpg"
+        title="Mechanical Assembly"
         imgPosition="right"
+        caption="In collaboration with mechanical engineers, I assembled the final prototype using three 3D-printed layers. I then attached the user-visible components to the top layer with hot glue, organized and routed the wiring, and secured the assembly with screws, heat-set inserts, and standoffs to ensure a polished and functional product."
         mt={2}
       />
-      <CaptionedVideo
-        src="roboticist/cesar_arm.mp4"
-        title="Dynamixel Arm"
-        caption="I debugged a misconfigured Dynamixel motor using the Dynamixel Wizard and got the arm working to raise and lower as intended, resolving the issue independently."
+
+      <Typography variant="h5" pt={HEADER_PT}>
+        Submarine
+      </Typography>
+      <Viewer3DWithImage
+        glbFile="roboticist/hasselhoff_sub.glb"
+        imgSrc="roboticist/hasselhoff_sub_cad.jpg"
+      />
+      <CaptionedImage
+        src="roboticist/hasselhoff_sub.jpg"
+        title="Mechanical Assembly"
+        caption="I assisted in the final assembly, which included inserting the Nucleo board and battery into the body and securing the lid with screws and a rubber gasket to achieve a watertight seal. I stayed until the end, working until 4 a.m. on demo day to ensure everything was ready for presentation 🫡."
         mt={2}
       />
     </Root>

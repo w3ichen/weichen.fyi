@@ -3,7 +3,7 @@ import CaptionedBase, { CaptionedBaseProps } from "./CaptionedBase";
 import { ImgHTMLAttributes } from "react";
 
 export const CAP_IMG_MAX_HEIGHT = 300;
-const StyledImage = styled("img")(
+export const StyledImage = styled("img")(
   ({ theme, unconstrained }: { theme?: Theme; unconstrained: boolean }) => ({
     width: "100%",
     height: "auto",

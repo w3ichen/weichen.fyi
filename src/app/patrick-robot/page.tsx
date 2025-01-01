@@ -8,7 +8,8 @@ import CaptionedVideo, {
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
 import TitleWithLogo from "@/components/Page/TitleWithLogo";
-import { Container, styled } from "@mui/material";
+import Viewer3D from "@/components/Viewer3D/Viewer3D";
+import { Box, Container, styled } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
 
@@ -111,6 +112,10 @@ export default function PatrickRobotPage() {
           },
         }}
       />
+
+      <Box mt={5} width="100%" height="400px">
+        <Viewer3D glbFile="roboticist/patrick.glb" />
+      </Box>
     </Root>
   );
 }
