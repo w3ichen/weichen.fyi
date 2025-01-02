@@ -51,7 +51,7 @@ export default function HasselhoffBotPage() {
         Remote Control
       </Typography>
       <Viewer3DWithImage
-        glbFile="roboticist/patrick.glb"
+        glbFile="roboticist/hasselhoff_remote.glb"
         imgSrc="roboticist/hasselhoff_remote_cad.png"
       />
       <CaptionedImage

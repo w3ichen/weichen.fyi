@@ -25,7 +25,7 @@ export default function Viewer3D({
       id={glbFile || objFile}
       style={{ height, width }}
       // Camera position: [x, y, z], y is up, fov 50 is similar to human eye
-      camera={{ position: [10, 7, 10], fov: 50 }} // Initial camera position
+      camera={{ position: [10, 10, 10], fov: 50 }} // Initial camera position
     >
       <OrbitControls makeDefault autoRotate />
       <ErrorBoundary fallback={null}>
