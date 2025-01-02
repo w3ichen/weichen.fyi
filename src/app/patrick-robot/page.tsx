@@ -76,7 +76,7 @@ export default function PatrickRobotPage() {
         title="Gazebo Simulator"
         caption="I developed Patrick's simulation in Gazebo from scratch. I assembled the URDF file to define its structure and integrated move_base for wheeled navigation, along with an arm trajectory controller to raise and lower the arm."
         mt={SECTION_PT}
-        imgProps={{
+        videoProps={{
           // This is to crop out the shorter video and re-center it
           style: {
             ...croppedImgStyle,
@@ -91,7 +91,7 @@ export default function PatrickRobotPage() {
         caption="Using the publish point tool, I implemented a user-defined search boundary to specify the area of interest. I also visualized the contamination gradient map, which updates in real-time, along with the real robot's roll, pitch, and yaw."
         mt={SECTION_PT}
         imgPosition="right"
-        imgProps={{
+        videoProps={{
           // This is to crop out the shorter video and re-center it
           style: {
             ...croppedImgStyle,
@@ -105,7 +105,7 @@ export default function PatrickRobotPage() {
         title="ROS Navigation Stack"
         caption="I implemented the ROS navigation stack in simulation, using LiDAR for object detection and map creation. The robot autonomously path plans to the next sampling location, avoiding obstacles with SLAM and costmaps."
         mt={SECTION_PT}
-        imgProps={{
+        videoProps={{
           // This is to crop out the shorter video and re-center it
           style: {
             ...croppedImgStyle,

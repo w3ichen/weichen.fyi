@@ -2,6 +2,8 @@
 
 import CaptionedIframe from "@/components/HeroImage/CaptionedIframe";
 import CaptionedImage from "@/components/HeroImage/CaptionedImage";
+import CaptionedVideo from "@/components/HeroImage/CaptionedVideo";
+import CaptionedViewer3D from "@/components/HeroImage/CaptionedViewer3D";
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
 import TitleWithLogo from "@/components/Page/TitleWithLogo";
@@ -114,8 +116,40 @@ export default function BackSCNRPage() {
       />
 
       <Typography variant="h5" pt={HEADER_PT}>
-        The Tech Stack
+        Tech Stack
       </Typography>
+      <CaptionedImage
+        src="entrepreneur/backscnr_front.png"
+        title="Front-end"
+        caption="I built the front-end from the ground up using Next.js, a React.js framework, and the Material-UI design library. I handled every aspect of the process, from coding to UI/UX design, and owned the entire front-end development lifecycle, from conception to deployment."
+        unconstrained
+      />
+      <CaptionedVideo
+        src="entrepreneur/backscnr_demo.mp4"
+        title="3D Manipulation & Visualization"
+        caption="I used Three.js for interactive 3D visualizations and tools, and Open3D and Trimesh for mesh manipulation, including auto-cropping with TensorFlow's PoseNet."
+        imgPosition="right"
+      />
+      <CaptionedViewer3D
+        src="entrepreneur/backscnr_mesh.glb"
+        title="Back-end"
+        caption="I built the back-end using Python's Django framework and a PostgreSQL database, hosted on a DigitalOcean Kubernetes cluster. I implemented GitHub Actions workflows for seamless continuous integration and collaborated closely with MS/PhD/PostDocs to integrate their algorithms, ensuring a robust infrastructure with minimal downtime."
+        mt={SECTION_PT}
+        viewer3DProps={{ cameraPosition: [10, 0, 10] }}
+      />
+      <CaptionedImage
+        src="entrepreneur/backscnr_ios.jpg"
+        title="iOS App"
+        caption="I developed the iOS app using Xcode and Objective-C, integrating the Structure Sensor SDK for a seamless user experience from scan capture to upload. After publishing it to the App Store, I worked closely with the Structure team to troubleshoot sensor issues and gain early access to their unreleased technologies."
+        imgPosition="right"
+        mt={SECTION_PT}
+        links={[
+          {
+            url: "https://structure.io/developers/",
+            text: "[Web] Structure SDK",
+          },
+        ]}
+      />
     </Root>
   );
 }

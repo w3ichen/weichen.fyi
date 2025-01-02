@@ -5,12 +5,13 @@ import { Suspense } from "react";
 import ObjModel from "./ObjModel";
 import GlbModel from "./GlbModel";
 
-interface Props {
+export interface Viewer3DProps {
   objFile?: string;
   glbFile?: string;
   textureFile?: string;
   width?: string | number;
   height?: string | number;
+  cameraPosition?: [number, number, number];
 }
 export default function Viewer3D({
   glbFile,
@@ -18,14 +19,15 @@ export default function Viewer3D({
   textureFile,
   width = "100%",
   height = "100%",
-}: Props) {
+  cameraPosition = [10, 10, 10],
+}: Viewer3DProps) {
   return (
     <Canvas
       key={glbFile || objFile}
       id={glbFile || objFile}
       style={{ height, width }}
       // Camera position: [x, y, z], y is up, fov 50 is similar to human eye
-      camera={{ position: [10, 10, 10], fov: 50 }} // Initial camera position
+      camera={{ position: cameraPosition, fov: 50 }} // Initial camera position
     >
       <OrbitControls makeDefault autoRotate />
       <ErrorBoundary fallback={null}>

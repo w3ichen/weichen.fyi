@@ -21,7 +21,7 @@ const StyledVideo = styled("video")(
 interface Props extends Omit<CaptionedBaseProps, "children"> {
   src: string;
   unconstrained?: boolean; // Remove the max-height constraint and border-radius
-  imgProps?: ImgHTMLAttributes<HTMLVideoElement>;
+  videoProps?: ImgHTMLAttributes<HTMLVideoElement>;
   autoPlay?: boolean;
   muted?: boolean;
   loop?: boolean;
@@ -30,7 +30,7 @@ interface Props extends Omit<CaptionedBaseProps, "children"> {
 export default function CaptionedVideo({
   src,
   unconstrained = false,
-  imgProps = {},
+  videoProps = {},
   autoPlay = true,
   muted = true,
   loop = true,
@@ -47,7 +47,7 @@ export default function CaptionedVideo({
         unconstrained={unconstrained}
         controls={controls}
         controlsList="nodownload" // Disable download button
-        {...imgProps}
+        {...videoProps}
       />
     </CaptionedBase>
   );
