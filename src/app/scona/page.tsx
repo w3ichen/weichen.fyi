@@ -12,6 +12,7 @@ const OrderedList = styled("ol")(({}) => ({
   paddingLeft: "40px",
 }));
 const HEADER_PT = 4;
+const SECTION_PT = 2;
 
 export default function SconaPage() {
   return (
@@ -53,7 +54,7 @@ export default function SconaPage() {
             text: "[Youtube] Strathcona High School",
           },
         ]}
-        mt={2}
+        mt={SECTION_PT}
       />
 
       <Typography variant="h5" pt={HEADER_PT}>
@@ -69,7 +70,7 @@ export default function SconaPage() {
             text: "[Edmonton Journal] Cappies Reviews: Rent",
           },
         ]}
-        mt={2}
+        mt={SECTION_PT}
       />
       <CaptionedImage
         src="student/scona_theatre_img2.jpg"
@@ -82,7 +83,7 @@ export default function SconaPage() {
             text: "[Edmonton Journal] Cappies Reviews: Bring it on",
           },
         ]}
-        mt={2}
+        mt={SECTION_PT}
       />
 
       <Typography variant="h5" pt={HEADER_PT}>
@@ -114,7 +115,7 @@ export default function SconaPage() {
             text: "[Scona Initiative] Past initiatives",
           },
         ]}
-        mt={2}
+        mt={SECTION_PT}
       />
 
       <Typography variant="h5" pt={HEADER_PT}>
@@ -134,7 +135,7 @@ export default function SconaPage() {
             text: "[Youtube] Scona Swim Team Info",
           },
         ]}
-        mt={2}
+        mt={SECTION_PT}
       />
     </Root>
   );

@@ -1,11 +1,15 @@
 "use client";
 
+import CaptionedIframe from "@/components/HeroImage/CaptionedIframe";
+import CaptionedImage from "@/components/HeroImage/CaptionedImage";
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
 import TitleWithLogo from "@/components/Page/TitleWithLogo";
-import { Container, styled } from "@mui/material";
+import { Container, styled, Typography } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
+const HEADER_PT = 4;
+const SECTION_PT = 2;
 
 export default function BackSCNRPage() {
   return (
@@ -89,6 +93,29 @@ export default function BackSCNRPage() {
           },
         ]}
       />
+      <CaptionedIframe
+        src="https://www.youtube.com/embed/NamzRog9RAg"
+        title="The Motivation"
+        caption="Scoliosis affects 5% of the population and is 8 times more common in girls, with 30% of patients requiring brace treatment. However, X-ray imaging, the standard diagnostic tool, exposes patients to harmful radiation, increasing their long-term cancer risk. BackSCNR introduces a novel, radiation-free solution using Surface Topography analysis for diagnosis and ongoing monitoring."
+        mt={SECTION_PT}
+      />
+      <CaptionedImage
+        src="entrepreneur/backscnr_method.jpg"
+        title="How it works"
+        caption="Surface topography captures a 3D torso mesh with a non-invasive depth sensor, mirrors it, and overlays the original mesh (red) with the mirrored mesh (blue). Spinal asymmetry is measured by mm deviations between the two meshes, generating a deviation map. This map is then input into AI models to predict severity and Cobb angle, the gold standard for scoliosis."
+        imgPosition="right"
+        links={[
+          {
+            url: "https://link.springer.com/article/10.1186/s12891-018-2303-4",
+            text: "[Paper] 3D Markerless asymmetry analysis",
+          },
+        ]}
+        mt={SECTION_PT}
+      />
+
+      <Typography variant="h5" pt={HEADER_PT}>
+        The Tech Stack
+      </Typography>
     </Root>
   );
 }

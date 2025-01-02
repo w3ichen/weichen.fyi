@@ -12,6 +12,7 @@ import Viewer3D from "@/components/Viewer3D/Viewer3D";
 import { Box, Container, styled } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
+const SECTION_PT = 2;
 
 const croppedImgStyle = {
   height: CAP_VIDEO_MAX_HEIGHT + "px",
@@ -61,20 +62,20 @@ export default function PatrickRobotPage() {
         src="https://www.youtube.com/embed/sSsalqQzWrk?si=aFP2ZnhJ5EArPcgW"
         title="The Motivation"
         caption="Manual soil sampling is inefficient, expensive, and prone to human error. Patrick leverages advanced robotics, adaptive sampling algorithms, and in-situ analysis capabilities to navigate challenging terrains, identify optimal sampling locations, and generate accurate contamination maps. Designed for hazardous industrial sites, Patrick improves sampling efficiency while minimizing human exposure."
-        mt={2}
+        mt={SECTION_PT}
       />
       <CaptionedImage
         src="roboticist/patrick_parts.jpg"
         title="The Hardware"
         caption="Patrick features a 4-wheeled robot base paired with a 4-DOF arm and a pXRF sensor for precise in-situ soil sampling."
         imgPosition="right"
-        mt={2}
+        mt={SECTION_PT}
       />
       <CaptionedVideo
         src="roboticist/patrick_gazebo_arm.mp4"
         title="Gazebo Simulator"
         caption="I developed Patrick's simulation in Gazebo from scratch. I assembled the URDF file to define its structure and integrated move_base for wheeled navigation, along with an arm trajectory controller to raise and lower the arm."
-        mt={2}
+        mt={SECTION_PT}
         imgProps={{
           // This is to crop out the shorter video and re-center it
           style: {
@@ -88,7 +89,7 @@ export default function PatrickRobotPage() {
         src="roboticist/patrick_rviz_gradmap.mp4"
         title="RViz Visualization"
         caption="Using the publish point tool, I implemented a user-defined search boundary to specify the area of interest. I also visualized the contamination gradient map, which updates in real-time, along with the real robot's roll, pitch, and yaw."
-        mt={2}
+        mt={SECTION_PT}
         imgPosition="right"
         imgProps={{
           // This is to crop out the shorter video and re-center it
@@ -103,7 +104,7 @@ export default function PatrickRobotPage() {
         src="roboticist/patrick_ros_nav.mp4"
         title="ROS Navigation Stack"
         caption="I implemented the ROS navigation stack in simulation, using LiDAR for object detection and map creation. The robot autonomously path plans to the next sampling location, avoiding obstacles with SLAM and costmaps."
-        mt={2}
+        mt={SECTION_PT}
         imgProps={{
           // This is to crop out the shorter video and re-center it
           style: {

@@ -8,6 +8,7 @@ import TitleWithLogo from "@/components/Page/TitleWithLogo";
 import { Container, styled } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
+const SECTION_PT = 2;
 
 export default function UatkdPage() {
   return (
@@ -74,7 +75,7 @@ export default function UatkdPage() {
             by 2023.
           </>
         }
-        mt={2}
+        mt={SECTION_PT}
       />
       <CaptionedImage
         src="creator/uatkd_award.jpg"
@@ -98,7 +99,7 @@ export default function UatkdPage() {
             text: "[Instagram] Club Sport Award Post",
           },
         ]}
-        mt={2}
+        mt={SECTION_PT}
       />
       <CaptionedImage
         src="creator/uatkd_web.png"
