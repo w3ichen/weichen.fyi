@@ -107,6 +107,9 @@ export default function UAlbertaPage() {
           Keith Mills, Muhammad Qharabagh, Weichen Qiu, et al.{" "}
           <strong>“Applying Graph Explanation to Operator Fusion.”</strong> The
           60th Design Automation Conference (DAC 2023). July 2023.{" "}
+          <LinkNewTab href="https://arxiv.org/abs/2501.00636">
+            [Arxiv]
+          </LinkNewTab>{" "}
           <LinkNewTab href="https://kgmills.github.io/assets/posters/applying_get_op_fusion_DAC2023.pdf">
             [Poster]
           </LinkNewTab>{" "}

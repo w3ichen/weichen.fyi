@@ -34,6 +34,16 @@ export default function HuaweiPage() {
             text: "huawei.com/ca",
             type: "web",
           },
+          {
+            url: "https://arxiv.org/abs/2501.00636",
+            text: "DAC23 Paper",
+            type: "paper",
+          },
+          {
+            url: "https://arxiv.org/abs/2211.17228",
+            text: "AAAI23 Paper",
+            type: "paper",
+          },
         ]}
       />
     </Root>

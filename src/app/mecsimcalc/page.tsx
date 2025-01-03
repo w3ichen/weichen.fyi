@@ -85,7 +85,7 @@ export default function MecSimCalcPage() {
       <CaptionedIframe
         src="https://www.youtube.com/embed/guUi0arZroQ"
         title="The Motivation"
-        caption="As Python becomes more widely adopted by engineers for calculations and simulations, a knowledge gap exists between running Python code locally and deploying it online at scale. Traditional methods often require learning new languages and configuring web servers, which can be a roadblock for many non-developers. MecSimCalc aims to bridge this gap and simplify the process."
+        caption="As Python becomes more widely adopted by engineers for calculations and simulations, a knowledge gap exists between running Python code locally and deploying it online at scale. Traditional methods often require learning new languages and configuring web servers, which can be a roadblock for many non-developers. Frustrated by the repetitive process of building a new app for each research project, MecSimCalc was born."
         mt={2}
       />
       <CaptionedVideo
