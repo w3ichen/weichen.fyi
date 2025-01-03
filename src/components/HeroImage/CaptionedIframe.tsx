@@ -1,22 +1,25 @@
 import { styled } from "@mui/material";
 import CaptionedBase, { CaptionedBaseProps } from "./CaptionedBase";
 
+export const CAP_IFRAME_MAX_HEIGHT = 300;
 const StyledIframe = styled("iframe")({
   width: "100%",
-  height: "300px",
+  height: CAP_IFRAME_MAX_HEIGHT + "px",
   objectFit: "cover",
   objectPosition: "center",
   borderRadius: "30px",
-  maxHeight: "300px",
+  maxHeight: CAP_IFRAME_MAX_HEIGHT + "px",
 });
 
 interface Props extends Omit<CaptionedBaseProps, "children"> {
   src: string;
   autoPlay?: boolean;
+  iframeProps?: React.IframeHTMLAttributes<HTMLIFrameElement>;
 }
 export default function CaptionedIframe({
   src: iframeSrc,
   autoPlay = false,
+  iframeProps = {},
   ...rest
 }: Props) {
   /**
@@ -35,6 +38,7 @@ export default function CaptionedIframe({
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
+        {...iframeProps}
       />
     </CaptionedBase>
   );

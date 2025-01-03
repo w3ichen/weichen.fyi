@@ -28,3 +28,4 @@ Open [http://localhost:3000](http://localhost:3000).
 | Lightbox Images (Full Screen) | 1600 x 500 pixels        | 16:9               |
 | Thumbnail Image               | 150 x 150 pixels         | 1:1                |
 | Timeline Icon Image (Custom)  | 200 x 200 pixels         | 1:1                |
+| Profile Picture (Custom)      | 500 x 500 pixels         | 1:1                |

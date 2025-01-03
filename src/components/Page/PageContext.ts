@@ -35,10 +35,34 @@ export const PageContext = React.createContext<PageContextInterface>({
   setRole: () => {},
 });
 
+export const DEFAULT_ROLE = ROLES.ROBOTICIST;
+
 export const TIMELINE_DETAILS: { [role: Role]: TimelineDetail[] } = {
   [ROLES.ROBOTICIST]: ROBOTICIST_DETAILS,
   [ROLES.ENTREPRENEUR]: ENTREPRENEUR_DETAILS,
   [ROLES.SWE]: STUDENT_DETAILS,
   [ROLES.STUDENT]: STUDENT_DETAILS,
   [ROLES.CREATOR]: CREATOR_DETAILS,
+};
+export const HOME_HERO: { [role: Role]: { cover: string; profile: string } } = {
+  [ROLES.ROBOTICIST]: {
+    cover: "home/roboticist_cover.jpg",
+    profile: "home/roboticist_profile.jpg",
+  },
+  [ROLES.ENTREPRENEUR]: {
+    cover: "home/entrepreneur_cover.jpg",
+    profile: "home/entrepreneur_profile.jpg",
+  },
+  [ROLES.SWE]: {
+    cover: "home/swe_cover.png",
+    profile: "home/swe_profile.jpg",
+  },
+  [ROLES.STUDENT]: {
+    cover: "home/student_cover.jpg",
+    profile: "home/student_profile.jpg",
+  },
+  [ROLES.CREATOR]: {
+    cover: "home/creator_cover.jpg",
+    profile: "home/creator_profile.jpg",
+  },
 };

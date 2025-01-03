@@ -1,7 +1,8 @@
 "use client";
 
-import HeroImage from "@/components/HeroImage/HomeHeroImage";
+import HomeHeroImage from "@/components/HeroImage/HomeHeroImage";
 import {
+  DEFAULT_ROLE,
   PageContext,
   Role,
   ROLES,
@@ -25,7 +26,7 @@ export default function HomePage() {
       setRole(roleParam as Role);
     } else if (!role) {
       // (2) If role is not set, use default role for home page
-      setRole(ROLES.ROBOTICIST);
+      setRole(DEFAULT_ROLE);
     }
   };
 
@@ -35,7 +36,7 @@ export default function HomePage() {
 
   return (
     <Container maxWidth="xl">
-      <HeroImage />
+      <HomeHeroImage role={role} />
       <Timeline details={timelineEntries} />
     </Container>
   );

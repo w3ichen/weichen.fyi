@@ -10,8 +10,8 @@ import TitleWithLogo from "@/components/Page/TitleWithLogo";
 import { Container, styled, Typography } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
-const HEADER_PT = 4;
-const SECTION_PT = 2;
+const HEADER_PT = 8;
+const SECTION_PT = 8;
 
 export default function BackSCNRPage() {
   return (
@@ -99,7 +99,7 @@ export default function BackSCNRPage() {
         src="https://www.youtube.com/embed/NamzRog9RAg"
         title="The Motivation"
         caption="Scoliosis affects 5% of the population and is 8 times more common in girls, with 30% of patients requiring brace treatment. However, X-ray imaging, the standard diagnostic tool, exposes patients to harmful radiation, increasing their long-term cancer risk. BackSCNR introduces a novel, radiation-free solution using Surface Topography analysis for diagnosis and ongoing monitoring."
-        mt={SECTION_PT}
+        mt={2}
       />
       <CaptionedImage
         src="entrepreneur/backscnr_method.jpg"

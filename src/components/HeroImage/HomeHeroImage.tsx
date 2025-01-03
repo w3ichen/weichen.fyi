@@ -3,8 +3,11 @@ import React from "react";
 import { useSpring, animated, to } from "@react-spring/web";
 import { useGesture } from "@use-gesture/react";
 import { HeroImageBase } from "./common";
+import { DEFAULT_ROLE, HOME_HERO, Role } from "../Page/PageContext";
+import { get } from "lodash";
 
-const PROFILE_IMG_SIZE = 200;
+export const PROFILE_IMG_SIZE = 200;
+export const COVER_IMG_HEIGHT = 300;
 
 const calcX = (y: number, ly: number) =>
   -(y - ly - window.innerHeight / 2) / 20;
@@ -36,7 +39,19 @@ const ProfileImage = styled("img")(({ theme }) => ({
   border: `3px solid ${theme.palette.primary.dark}`,
 }));
 
-export default function HeroImage() {
+const CoverImage = styled(HeroImageBase)(({}) => ({
+  // Force the same height
+  minHeight: COVER_IMG_HEIGHT + "px",
+  maxHeight: COVER_IMG_HEIGHT + "px",
+  height: COVER_IMG_HEIGHT + "px",
+}));
+
+interface Props {
+  role: Role | null;
+}
+export default function HomeHeroImage({ role }: Props) {
+  const { cover, profile } = get(HOME_HERO, role || DEFAULT_ROLE);
+
   const domTarget = React.useRef(null);
   // Animate profile image on hover
   const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(
@@ -67,7 +82,7 @@ export default function HeroImage() {
   );
   return (
     <Root>
-      <HeroImageBase src="banner_img.jpg" alt="cover image" />
+      <CoverImage src={cover} alt="cover image" />
       <animated.div
         ref={domTarget}
         style={{
@@ -78,7 +93,7 @@ export default function HeroImage() {
           rotateZ,
         }}
       >
-        <ProfileImage src="profile_img.jpg" alt="profile image" />
+        <ProfileImage src={profile} alt="profile image" />
       </animated.div>
     </Root>
   );
