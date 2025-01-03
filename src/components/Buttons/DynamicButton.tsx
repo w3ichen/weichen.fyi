@@ -4,6 +4,7 @@ import {
   Instagram,
   Language,
   LinkedIn,
+  MenuBook,
   Newspaper,
   YouTube,
 } from "@mui/icons-material";
@@ -18,7 +19,8 @@ export type ButtonType =
   | "web"
   | "youtube"
   | "instagram"
-  | "appstore";
+  | "appstore"
+  | "book";
 
 export interface DynamicButtonProps {
   url: string;
@@ -77,6 +79,12 @@ export default function DynamicButton({ url, text, type }: DynamicButtonProps) {
           color="appstoreBlue"
           href={url}
         >
+          {text}
+        </ButtonsBase>
+      );
+    case "book":
+      return (
+        <ButtonsBase startIcon={<MenuBook />} color="success" href={url}>
           {text}
         </ButtonsBase>
       );

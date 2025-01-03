@@ -86,6 +86,9 @@ export const SKILLS: { [skill: string]: SkillType } = {
   "Draw.io": "APPLICATION",
   "NVIDIA CUDA": "APPLICATION",
   Anaconda: "APPLICATION",
+  Overleaf: "APPLICATION",
+  Figma: "APPLICATION",
+  Jira: "APPLICATION",
   // Soft Skills
   Leadership: "SOFT_SKILL",
   "Conflict Resolution": "SOFT_SKILL",
@@ -93,6 +96,7 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Networking: "SOFT_SKILL",
   "Social Media": "SOFT_SKILL",
   Negotiation: "SOFT_SKILL",
+  "Technical Writing": "SOFT_SKILL",
 };
 
 export type Skill = keyof typeof SKILLS;

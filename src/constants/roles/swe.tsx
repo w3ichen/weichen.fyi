@@ -69,7 +69,7 @@ export const SWE_DETAILS: TimelineDetail[] = [
     endDate: { year: 2021, month: 8 },
     logo: "swe/drivewyze_logo.jpg",
     location: "Edmonton, Canada",
-    skills: ["WebDev", "NextJS", "ReactJS", "ReduxJS", "HTML"],
+    skills: ["WebDev", "NextJS", "ReactJS", "ReduxJS", "Jira"],
     url: "/drivewyze",
   },
   {
@@ -81,5 +81,14 @@ export const SWE_DETAILS: TimelineDetail[] = [
     location: "Edmonton, Canada",
     skills: ["Engineering", "Research", "CivE", "BME", "Python"],
     url: "/ualberta-eng",
+  },
+  {
+    company: "weichen.fyi Github",
+    position: "Portfolio Website v2",
+    startDate: { year: 2024, month: 12 },
+    endDate: { year: 2025, month: 1 },
+    location: "Edmonton, Canada",
+    skills: ["WebDev", "NextJS", "ReactJS", "TypeScript", "Git"],
+    url: "https://github.com/w3ichen/weichen.fyi",
   },
 ];
