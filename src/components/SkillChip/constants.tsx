@@ -70,6 +70,10 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Discourse: "LIBRARY",
   Docusaurus: "LIBRARY",
   "PyTorch Geometric": "LIBRARY",
+  Formik: "LIBRARY",
+  Yup: "LIBRARY",
+  Jest: "LIBRARY",
+  "Unit Testing": "LIBRARY",
   // HARDWARE
   Soldering: "HARDWARE",
   Circuits: "HARDWARE",
@@ -103,6 +107,7 @@ export const SKILLS: { [skill: string]: SkillType } = {
   "Social Media": "SOFT_SKILL",
   Negotiation: "SOFT_SKILL",
   "Technical Writing": "SOFT_SKILL",
+  "Agile Software Development": "SOFT_SKILL",
 };
 
 export type Skill = keyof typeof SKILLS;
