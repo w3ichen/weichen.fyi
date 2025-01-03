@@ -42,6 +42,7 @@ export const SKILLS: { [skill: string]: SkillType } = {
   JavaScript: "LANGUAGE",
   TypeScript: "LANGUAGE",
   SQL: "LANGUAGE",
+  Markdown: "LANGUAGE",
   // LIBRARY
   ROS1: "LIBRARY",
   Gazebo: "LIBRARY",
@@ -58,6 +59,8 @@ export const SKILLS: { [skill: string]: SkillType } = {
   PostgreSQL: "LIBRARY",
   Stripe: "LIBRARY",
   Langchain: "LIBRARY",
+  Discourse: "LIBRARY",
+  Docusaurus: "LIBRARY",
   // HARDWARE
   Soldering: "HARDWARE",
   Circuits: "HARDWARE",

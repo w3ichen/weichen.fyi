@@ -9,8 +9,8 @@ import TitleWithLogo from "@/components/Page/TitleWithLogo";
 import { Container, styled, Typography } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
-const HEADER_PT = 8;
-const SECTION_PT = 8;
+const HEADER_PT = 7;
+const SECTION_PT = 5;
 
 export default function MecSimCalcPage() {
   return (
@@ -51,6 +51,9 @@ export default function MecSimCalcPage() {
           "Docker",
           "AI",
           "Langchain",
+          "Discourse",
+          "Docusaurus",
+          "Markdown",
           "Leadership",
           "Social Media",
         ]}
@@ -106,7 +109,13 @@ export default function MecSimCalcPage() {
       <CaptionedImage
         src="entrepreneur/mecsimcalc_event.jpg"
         title="Entrepreneurship"
-        caption="Say led team and conferences HERE!"
+        caption="As the technical co-founder, I led a 3-9 member team, overseeing development, conducting code reviews, and driving user growth through cold calls, customer interviews, and digital marketing. I actively engaged in the local startup ecosystem by attending conferences, hosting hackathons, and networking with other founders. Our startup was part of CMU's Project Olympus incubator, March 2024 cohort."
+        links={[
+          {
+            url: "https://www.cmu.edu/swartz-center-for-entrepreneurship/education-and-resources/project-olympus/customerdiscoverykickstartteams.html",
+            text: "[CMU] Project Olympus Cohorts",
+          },
+        ]}
         mt={SECTION_PT}
       />
 
@@ -122,14 +131,20 @@ export default function MecSimCalcPage() {
       <CaptionedImage
         src="entrepreneur/mecsimcalc_aws.jpg"
         title="Back-end"
-        caption="Backend and talk AWS"
+        caption="I built the back-end using Python's Django and PostgreSQL, hosted on a DigitalOcean Kubernetes cluster. I engineered an end-to-end pipeline in AWS, from building Docker images with Image Builder to storing assets in S3 and ECR, and deploying apps on Lambda and Fargate. I leveraged the AWS JavaScript SDK and even delved into Lambda's source code to customize the Golang server to our specific needs. This resulted in an automated, robust, and highly scalable infrastructure."
         imgPosition="right"
-        mt={5}
+        mt={3}
+        links={[
+          {
+            url: "https://github.com/MecSimCalc/aws-lambda-runtime-interface-emulator",
+            text: "[Github] My Modified AWS Lambda Golang Server",
+          },
+        ]}
       />
       <CaptionedIframe
         src="https://mecsimcalc.com/app/6170581/thevenin_equivalent_circuit_calculator"
-        title="Third-party APIs"
-        caption="Talk API integrations. Maybe embed"
+        title="Third-Party Integrations"
+        caption="I integrated third-party APIs and tools, including the AWS JavaScript API for compute, Stripe for payments, OpenAI and LangChain for a custom chatbot, Discourse for a discussion platform, and Docusaurus for the documentation page. This involved reading extensive documentation and following security best practices when using and storing API keys."
         mt={SECTION_PT}
         iframeProps={{ style: { height: "500px", maxHeight: "500px" } }} // Set height to larger
       />
