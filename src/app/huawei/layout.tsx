@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Huawei | Weichen Qiu",
-  description: "Huawei Canada, Edmonton R&D Centre, AI Research",
+  description: "Huawei Canada, Edmonton Research Centre, AI Research",
 };
 
 interface Props {

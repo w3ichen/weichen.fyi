@@ -15,7 +15,7 @@ const CaptionContainer = styled(Box)(({ theme }) => ({
   padding: 0,
   [theme.breakpoints.down("md")]: {
     textAlign: "center",
-    padding: "20px",
+    padding: "20px 0",
   },
 }));
 

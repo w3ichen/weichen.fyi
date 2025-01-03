@@ -35,6 +35,11 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Engineering: "CATEGORY",
   "3D": "CATEGORY",
   Research: "CATEGORY",
+  "Computer Vision": "CATEGORY",
+  "Graph Neural Networks": "CATEGORY",
+  "Deep Learning": "CATEGORY",
+  "Machine Learning": "CATEGORY",
+  "Neural Architecture Search": "CATEGORY",
   // LANGUAGE
   Python: "LANGUAGE",
   C: "LANGUAGE",
@@ -64,6 +69,7 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Langchain: "LIBRARY",
   Discourse: "LIBRARY",
   Docusaurus: "LIBRARY",
+  "PyTorch Geometric": "LIBRARY",
   // HARDWARE
   Soldering: "HARDWARE",
   Circuits: "HARDWARE",
