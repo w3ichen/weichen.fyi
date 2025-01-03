@@ -34,6 +34,7 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Healthcare: "CATEGORY",
   Engineering: "CATEGORY",
   "3D": "CATEGORY",
+  Research: "CATEGORY",
   // LANGUAGE
   Python: "LANGUAGE",
   C: "LANGUAGE",
@@ -43,6 +44,7 @@ export const SKILLS: { [skill: string]: SkillType } = {
   TypeScript: "LANGUAGE",
   SQL: "LANGUAGE",
   Markdown: "LANGUAGE",
+  Mathematica: "LANGUAGE",
   // LIBRARY
   ROS1: "LIBRARY",
   Gazebo: "LIBRARY",
@@ -51,6 +53,7 @@ export const SKILLS: { [skill: string]: SkillType } = {
   PyTorch: "LIBRARY",
   NextJS: "LIBRARY",
   ReactJS: "LIBRARY",
+  ReduxJS: "LIBRARY",
   ThreeJS: "LIBRARY",
   Open3D: "LIBRARY",
   Trimesh: "LIBRARY",
@@ -79,6 +82,10 @@ export const SKILLS: { [skill: string]: SkillType } = {
   SolidWorks: "APPLICATION",
   Maya: "APPLICATION",
   Blender: "APPLICATION",
+  Git: "APPLICATION",
+  "Draw.io": "APPLICATION",
+  "NVIDIA CUDA": "APPLICATION",
+  Anaconda: "APPLICATION",
   // Soft Skills
   Leadership: "SOFT_SKILL",
   "Conflict Resolution": "SOFT_SKILL",

@@ -54,6 +54,7 @@ export default function MecSimCalcPage() {
           "Discourse",
           "Docusaurus",
           "Markdown",
+          "Git",
           "Leadership",
           "Social Media",
         ]}

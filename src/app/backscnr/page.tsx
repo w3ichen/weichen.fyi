@@ -58,6 +58,7 @@ export default function BackSCNRPage() {
           "Kubernetes",
           "Linux",
           "Docker",
+          "Git",
           "Leadership",
           "Social Media",
           "Negotiation",

@@ -5,6 +5,7 @@ import { ROBOTICIST_DETAILS } from "@/constants/roles/roboticist";
 import { STUDENT_DETAILS } from "@/constants/roles/student";
 import { CREATOR_DETAILS } from "@/constants/roles/creator";
 import { ENTREPRENEUR_DETAILS } from "@/constants/roles/entrepreneur";
+import { SWE_DETAILS } from "@/constants/roles/swe";
 
 export const ROLES = {
   ROBOTICIST: "roboticist",
@@ -40,7 +41,7 @@ export const DEFAULT_ROLE = ROLES.ROBOTICIST;
 export const TIMELINE_DETAILS: { [role: Role]: TimelineDetail[] } = {
   [ROLES.ROBOTICIST]: ROBOTICIST_DETAILS,
   [ROLES.ENTREPRENEUR]: ENTREPRENEUR_DETAILS,
-  [ROLES.SWE]: STUDENT_DETAILS,
+  [ROLES.SWE]: SWE_DETAILS,
   [ROLES.STUDENT]: STUDENT_DETAILS,
   [ROLES.CREATOR]: CREATOR_DETAILS,
 };
