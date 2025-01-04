@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { theme } from "../constants/theme";
 import "./globals.css";
 import PageBase from "@/components/Page/PageBase";
+import ogImage from "../../public/ogImage.jpg";
 
 export const metadata: Metadata = {
   title: "Weichen Qiu",
@@ -30,7 +31,22 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    images: "/thumbnail.jpg",
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
+  },
+  twitter: {
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
   },
   robots: "index, follow", // Allow search engines to index the page
   alternates: {
