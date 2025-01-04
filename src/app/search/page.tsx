@@ -4,11 +4,15 @@ import {
   TIMELINE_DETAILS,
   TimelineDetail,
 } from "@/components/Page/PageContext";
-import { Skill } from "@/components/SkillChip/constants";
+import {
+  Skill,
+  SKILL_TYPES_COLORS,
+  SKILLS,
+} from "@/components/SkillChip/constants";
 import SkillChip from "@/components/SkillChip/SkillChip";
 import Timeline from "@/components/Timeline/Timeline";
-import { Container, styled, Typography } from "@mui/material";
-import { isEmpty, uniqBy } from "lodash";
+import { Container, Divider, Stack, styled, Typography } from "@mui/material";
+import { capitalize, isEmpty, uniqBy } from "lodash";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect } from "react";
 
@@ -56,18 +60,47 @@ export default function SearchPage() {
   }, [searchParams]);
 
   const noResults = !!skill && isEmpty(searchResults);
+  const skillTypes = Object.keys(SKILL_TYPES_COLORS);
+
   return (
-    <Root maxWidth="xl">
+    <Root maxWidth="lg">
       <Typography variant="h4">Search</Typography>
       <SkillChip skill={skill || ""} size="medium" variant="filled" />
 
       {noResults ? (
-        <Typography variant="body1" color="textDisabled">
+        <Typography variant="body1" color="textDisabled" my={4}>
           No results found
         </Typography>
       ) : (
         <Timeline details={searchResults || []} />
       )}
+
+      <Divider sx={{ width: "100%", my: 3 }} />
+      <Typography variant="h5" fontWeight="bold">
+        All my skills
+      </Typography>
+      {skillTypes.map((skillType) => {
+        const skills = Object.entries(SKILLS).filter(
+          ([, type]) => type == skillType
+        );
+        return (
+          <>
+            <Typography variant="h6">
+              {capitalize(skillType.replaceAll("_", " "))}
+            </Typography>
+            <Stack
+              direction="row"
+              width="100%"
+              flexWrap="wrap"
+              justifyContent="center"
+            >
+              {skills.map(([skill], i) => (
+                <SkillChip key={`skill-${skillType}-${i}`} skill={skill} />
+              ))}
+            </Stack>
+          </>
+        );
+      })}
     </Root>
   );
 }

@@ -39,6 +39,7 @@ export default function MecSimCalcPage() {
           "TypeScript",
           "ReactJS",
           "NextJS",
+          "LeafletJS",
           "Material UI",
           "SQL",
           "PostgreSQL",

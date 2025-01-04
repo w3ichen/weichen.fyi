@@ -26,6 +26,10 @@ export interface CaptionedBaseProps extends StackProps {
   links?: { url: string; text: string }[];
   title?: string;
 }
+
+/**
+ * @links if url is "" then will just be text and not a link
+ */
 export default function CaptionedBase({
   children,
   caption,
@@ -52,7 +56,11 @@ export default function CaptionedBase({
         {!!links &&
           links.map((link, i) => (
             <Typography key={`link-${i}`} variant="caption">
-              <LinkNewTab href={link.url}>{link.text}</LinkNewTab>
+              {!!link.url ? (
+                <LinkNewTab href={link.url}>{link.text}</LinkNewTab>
+              ) : (
+                link.text
+              )}
             </Typography>
           ))}
       </CaptionContainer>

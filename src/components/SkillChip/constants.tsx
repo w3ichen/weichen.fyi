@@ -40,6 +40,7 @@ export const SKILLS: { [skill: string]: SkillType } = {
   "Deep Learning": "CATEGORY",
   "Machine Learning": "CATEGORY",
   "Neural Architecture Search": "CATEGORY",
+  "Concurrent Programming": "CATEGORY",
   // LANGUAGE
   Python: "LANGUAGE",
   C: "LANGUAGE",
@@ -64,6 +65,7 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Trimesh: "LIBRARY",
   "Material UI": "LIBRARY",
   Django: "LIBRARY",
+  Flask: "LIBRARY",
   PostgreSQL: "LIBRARY",
   Stripe: "LIBRARY",
   Langchain: "LIBRARY",
@@ -74,6 +76,11 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Yup: "LIBRARY",
   Jest: "LIBRARY",
   "Unit Testing": "LIBRARY",
+  LeafletJS: "LIBRARY",
+  Tkinter: "LIBRARY",
+  Numba: "LIBRARY",
+  "Concurrent.futures": "LIBRARY",
+  GeoPandas: "LIBRARY",
   // HARDWARE
   Soldering: "HARDWARE",
   Circuits: "HARDWARE",
