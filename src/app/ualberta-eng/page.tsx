@@ -4,6 +4,7 @@ import CaptionedIframe from "@/components/HeroImage/CaptionedIframe";
 import CaptionedImage from "@/components/HeroImage/CaptionedImage";
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
+import { UALBERTA_ENG_SKILLS } from "@/constants/skills";
 import { Container, styled, Typography } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
@@ -19,32 +20,7 @@ export default function UAlbertaEngPage() {
       <HeroImageBase src="swe/ualberta_eng_hero.jpg" sx={{ height: "300px" }} />
 
       <ProjectMetadata
-        skills={[
-          "Engineering",
-          "Research",
-          "CivE",
-          "BME",
-          "Python",
-          "Git",
-          "Videography",
-          "WebDev",
-          "Cloud Computing",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "LeafletJS",
-          "Flask",
-          "GeoPandas",
-          "Mathematica",
-          "Linux",
-          "Tkinter",
-          "Concurrent Programming",
-          "Numba",
-          "Concurrent.futures",
-          "Technical Writing",
-          "Social Media",
-          "Networking",
-        ]}
+        skills={UALBERTA_ENG_SKILLS}
         buttons={[
           {
             url: "https://www.ualberta.ca/en/engineering/index.html",

@@ -6,6 +6,7 @@ import CaptionedVideo from "@/components/HeroImage/CaptionedVideo";
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
 import Viewer3DWithImage from "@/components/Viewer3D/Viewer3DWithImage";
+import { HASSELHOFF_BOT_SKILLS } from "@/constants/skills";
 import { Container, styled, Typography } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
@@ -21,19 +22,7 @@ export default function HasselhoffBotPage() {
 
       <HeroImageBase src="roboticist/hasselhoff_hero.jpg" />
 
-      <ProjectMetadata
-        skills={[
-          "Robotics",
-          "C",
-          "Hardware",
-          "Circuits",
-          "Soldering",
-          "Embedded",
-          "Embedded Systems",
-          "Nucleo STM32 Board",
-          "16878 Advanced Mechatronic Design Class",
-        ]}
-      />
+      <ProjectMetadata skills={HASSELHOFF_BOT_SKILLS} />
       <CaptionedIframe
         src="https://www.youtube.com/embed/ljnBSBY5iik?si=eJXdFFbEcu_MqtOJ"
         title="The Mission"

@@ -7,6 +7,7 @@ import CaptionedViewer3D from "@/components/HeroImage/CaptionedViewer3D";
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
 import TitleWithLogo from "@/components/Page/TitleWithLogo";
+import { BACKSCNR_SKILLS } from "@/constants/skills";
 import { Container, styled, Typography } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
@@ -26,43 +27,7 @@ export default function BackSCNRPage() {
       />
 
       <ProjectMetadata
-        skills={[
-          "Healthcare",
-          "Startup",
-          "BME",
-          "CS",
-          "AI",
-          "PyTorch",
-          "TensorFlow",
-          "WebDev",
-          "Python",
-          "Django",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "TypeScript",
-          "ReactJS",
-          "NextJS",
-          "Material UI",
-          "SQL",
-          "PostgreSQL",
-          "Stripe",
-          "3D",
-          "ThreeJS",
-          "Open3D",
-          "Trimesh",
-          "Cloud Computing",
-          "AWS",
-          "DigitalOcean",
-          "iOS",
-          "Kubernetes",
-          "Linux",
-          "Docker",
-          "Git",
-          "Leadership",
-          "Social Media",
-          "Negotiation",
-        ]}
+        skills={BACKSCNR_SKILLS}
         buttons={[
           {
             url: "https://apps.apple.com/us/app/backscnr/id1629230768",

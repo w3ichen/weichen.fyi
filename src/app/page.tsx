@@ -6,9 +6,9 @@ import {
   PageContext,
   Role,
   ROLES,
-  TIMELINE_DETAILS,
 } from "@/components/Page/PageContext";
 import Timeline from "@/components/Timeline/Timeline";
+import { ALL_TIMELINE_DETAILS, TIMELINE_DETAILS } from "@/constants/timeline";
 import { Container } from "@mui/material";
 import { get } from "lodash";
 import { useSearchParams } from "next/navigation";
@@ -17,7 +17,9 @@ import React, { useEffect } from "react";
 export default function HomePage() {
   const searchParams = useSearchParams();
   const { role, setRole } = React.useContext(PageContext);
-  const timelineEntries = get(TIMELINE_DETAILS, role || "", []);
+  const timelineEntries = get(TIMELINE_DETAILS, role || "", []).map(
+    (key) => ALL_TIMELINE_DETAILS[key]
+  );
 
   const onPageLoad = () => {
     const roleParam = searchParams.get("is");

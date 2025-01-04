@@ -5,6 +5,7 @@ import CaptionedImage from "@/components/HeroImage/CaptionedImage";
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
 import TitleWithLogo from "@/components/Page/TitleWithLogo";
+import { UATKD_SKILLS } from "@/constants/skills";
 import { Container, styled } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
@@ -21,22 +22,7 @@ export default function UatkdPage() {
       <HeroImageBase src="creator/uatkd_hero.jpg" sx={{ height: "300px" }} />
 
       <ProjectMetadata
-        skills={[
-          "Leadership",
-          "Conflict Resolution",
-          "Public Speaking",
-          "Networking",
-          "Athletics",
-          "Social Media",
-          "Photography",
-          "Videography",
-          "WebDev",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "NextJS",
-          "ReactJS",
-        ]}
+        skills={UATKD_SKILLS}
         buttons={[
           {
             url: "https://uatkd.ca",

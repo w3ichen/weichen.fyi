@@ -1,4 +1,3 @@
-import { TimelineDetail } from "@/components/Page/PageContext";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
@@ -9,6 +8,7 @@ import { calcDuration } from "./common";
 import { ListItemText, styled } from "@mui/material";
 import TimelineCard from "./TimelineCard";
 import { get, isString } from "lodash";
+import { TimelineDetail } from "@/constants/timeline";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",

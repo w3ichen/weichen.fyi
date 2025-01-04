@@ -1,18 +1,15 @@
 "use client";
 
 import {
-  TIMELINE_DETAILS,
-  TimelineDetail,
-} from "@/components/Page/PageContext";
-import {
   Skill,
   SKILL_TYPES_COLORS,
   SKILLS,
 } from "@/components/SkillChip/constants";
 import SkillChip from "@/components/SkillChip/SkillChip";
 import Timeline from "@/components/Timeline/Timeline";
+import { ALL_TIMELINE_DETAILS, TimelineDetail } from "@/constants/timeline";
 import { Container, Divider, Stack, styled, Typography } from "@mui/material";
-import { capitalize, isEmpty, uniqBy } from "lodash";
+import { capitalize, isEmpty } from "lodash";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect } from "react";
 
@@ -38,12 +35,10 @@ export default function SearchPage() {
       // (2) If skill in search param is valid, set skill to that
       setSkill(skillParam);
       // (3) Get all the values in timeline details
-      let results = Object.values(TIMELINE_DETAILS).flat();
-      // (4) Filter to only unique values
-      results = uniqBy(results, "url");
-      // (5) Filter to only results that have the skill
+      let results = Object.values(ALL_TIMELINE_DETAILS);
+      // (4) Filter to only results that have the skill
       results = results.filter((result) => result.skills.includes(skillParam));
-      // (6) Sort by endDate with "Present" at the beginning
+      // (5) Sort by endDate with "Present" at the beginning
       results.sort((a, b) => {
         if (a.endDate === "Present") return -1;
         if (b.endDate === "Present") return 1;
@@ -54,7 +49,7 @@ export default function SearchPage() {
         // Fallback to comparing by month
         return b.endDate.month - a.endDate.month;
       });
-      // (7) Set search results to the filtered results
+      // (6) Set search results to the filtered results
       setSearchResults(results);
     }
   }, [searchParams]);

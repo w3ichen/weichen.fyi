@@ -9,6 +9,7 @@ import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
 import TitleWithLogo from "@/components/Page/TitleWithLogo";
 import Viewer3D from "@/components/Viewer3D/Viewer3D";
+import { PATRICK_ROBOT_SKILLS } from "@/constants/skills";
 import { Box, Container, styled } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
@@ -33,7 +34,7 @@ export default function PatrickRobotPage() {
       />
 
       <ProjectMetadata
-        skills={["Robotics", "Python", "ROS1", "Gazebo", "RViz", "Linux"]}
+        skills={PATRICK_ROBOT_SKILLS}
         buttons={[
           {
             url: "https://www.cmu.edu/me/robomechanicslab",

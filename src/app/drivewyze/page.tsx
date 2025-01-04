@@ -4,6 +4,7 @@ import CaptionedImage from "@/components/HeroImage/CaptionedImage";
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
 import TitleWithLogo from "@/components/Page/TitleWithLogo";
+import { DRIVEWYZE_SKILLS } from "@/constants/skills";
 import { Container, styled } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
@@ -15,25 +16,7 @@ export default function DrivewyzePage() {
       <HeroImageBase src="swe/drivewyze_hero.jpg" sx={{ height: "300px" }} />
 
       <ProjectMetadata
-        skills={[
-          "WebDev",
-          "NextJS",
-          "ReactJS",
-          "ReduxJS",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "TypeScript",
-          "Material UI",
-          "Formik",
-          "Yup",
-          "Jest",
-          "Unit Testing",
-          "Git",
-          "Figma",
-          "Jira",
-          "Agile Software Development",
-        ]}
+        skills={DRIVEWYZE_SKILLS}
         buttons={[
           {
             url: "https://drivewyze.com",

@@ -5,6 +5,7 @@ import CaptionedVideo from "@/components/HeroImage/CaptionedVideo";
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
 import TitleWithLogo from "@/components/Page/TitleWithLogo";
+import { CESAR_ROBOT_SKILLS } from "@/constants/skills";
 import { Container, styled } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
@@ -21,7 +22,7 @@ export default function CesarRobotPage() {
       />
 
       <ProjectMetadata
-        skills={["Robotics", "Python", "ROS1", "Hardware", "Linux"]}
+        skills={CESAR_ROBOT_SKILLS}
         buttons={[
           {
             url: "https://www.cmu.edu/me/robomechanicslab",

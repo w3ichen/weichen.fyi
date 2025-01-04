@@ -1,4 +1,3 @@
-import { TimelineDetail } from "@/components/Page/PageContext";
 import { UnfoldMore } from "@mui/icons-material";
 import { CardActions, Stack, styled } from "@mui/material";
 import Card from "@mui/material/Card";
@@ -7,6 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import SkillChip from "../SkillChip/SkillChip";
+import { TimelineDetail } from "@/constants/timeline";
 
 const StyledCard = styled(Card)(({ theme }) => ({
   maxWidth: 400,
@@ -35,7 +35,7 @@ export default function TimelineCard({
   company,
   position,
   location,
-  skills,
+  skills_meta,
   url,
 }: TimelineDetail) {
   return (
@@ -53,7 +53,7 @@ export default function TimelineCard({
 
         <CardActions sx={{ mt: 0, pt: 0 }}>
           <Stack direction="row" width="100%" flexWrap="wrap">
-            {skills.map((skill, i) => (
+            {skills_meta.map((skill, i) => (
               <SkillChip key={`skill-${i}`} skill={skill} />
             ))}
             <UnfoldMore color="action" sx={{ ml: "auto" }} />

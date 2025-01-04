@@ -6,6 +6,7 @@ import CaptionedVideo from "@/components/HeroImage/CaptionedVideo";
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
 import TitleWithLogo from "@/components/Page/TitleWithLogo";
+import { MECSIMCALC_SKILLS } from "@/constants/skills";
 import { Container, styled, Typography } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
@@ -25,40 +26,7 @@ export default function MecSimCalcPage() {
       />
 
       <ProjectMetadata
-        skills={[
-          "Engineering",
-          "Startup",
-          "CS",
-          "CivE",
-          "WebDev",
-          "Python",
-          "Django",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "TypeScript",
-          "ReactJS",
-          "NextJS",
-          "LeafletJS",
-          "Material UI",
-          "SQL",
-          "PostgreSQL",
-          "Stripe",
-          "Cloud Computing",
-          "AWS",
-          "DigitalOcean",
-          "Kubernetes",
-          "Linux",
-          "Docker",
-          "AI",
-          "Langchain",
-          "Discourse",
-          "Docusaurus",
-          "Markdown",
-          "Git",
-          "Leadership",
-          "Social Media",
-        ]}
+        skills={MECSIMCALC_SKILLS}
         buttons={[
           {
             url: "https://linkedin.com/company/mecsimcalc",

@@ -1,6 +1,6 @@
-import { TimelineDetail } from "@/components/Page/PageContext";
 import MuiTimeline from "@mui/lab/Timeline";
 import TimelineEntry from "./TimelineEntry";
+import { TimelineDetail } from "@/constants/timeline";
 
 interface Props {
   details: TimelineDetail[];

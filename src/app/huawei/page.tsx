@@ -5,6 +5,7 @@ import CaptionedImage from "@/components/HeroImage/CaptionedImage";
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
 import TitleWithLogo from "@/components/Page/TitleWithLogo";
+import { HUAWEI_SKILLS } from "@/constants/skills";
 import { Container, styled, Typography } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
@@ -18,26 +19,7 @@ export default function HuaweiPage() {
       <HeroImageBase src="swe/huawei_hero.jpg" sx={{ height: "300px" }} />
 
       <ProjectMetadata
-        skills={[
-          "AI",
-          "Research",
-          "CS",
-          "Computer Vision",
-          "Graph Neural Networks",
-          "Deep Learning",
-          "Machine Learning",
-          "Neural Architecture Search",
-          "Python",
-          "PyTorch",
-          "PyTorch Geometric",
-          "Linux",
-          "NVIDIA CUDA",
-          "Anaconda",
-          "Draw.io",
-          "Git",
-          "Overleaf",
-          "Markdown",
-        ]}
+        skills={HUAWEI_SKILLS}
         buttons={[
           {
             url: "https://www.huawei.com/ca",
