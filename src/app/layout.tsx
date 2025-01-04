@@ -8,7 +8,8 @@ import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Weichen Qiu",
-  description: "Weichen Qiu's Portfolio",
+  description:
+    "Weichen's Portfolio | Roboticist | Entrepreneur | SWE | Student | Creator",
   authors: [{ name: "Weichen Qiu", url: "https://weichen.fyi" }],
   keywords: [
     "Weichen Qiu",
@@ -19,9 +20,21 @@ export const metadata: Metadata = {
     "Projects",
     "Resume",
     "CV",
+    "Climate Tech",
+    "Roboticist",
+    "Entrepreneur",
+    "SWE",
+    "Software Engineer",
+    "Student",
+    "Creator",
   ],
   openGraph: {
+    type: "website",
     images: "/thumbnail.jpg",
+  },
+  robots: "index, follow", // Allow search engines to index the page
+  alternates: {
+    canonical: "https://weichen.fyi", // Preferred URL for SEO
   },
 };
 

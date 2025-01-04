@@ -223,6 +223,7 @@ export const ALL_TIMELINE_DETAILS: Record<TimelineDetailsKey, TimelineDetail> =
       position: "Portfolio Website v2",
       startDate: { year: 2024, month: 12 },
       endDate: { year: 2025, month: 1 },
+      logo: "favicon.png",
       location: "Edmonton, Canada",
       skills_meta: skills.WEICHEN_FYI_SKILLS_META,
       skills: skills.WEICHEN_FYI_SKILLS_META,
