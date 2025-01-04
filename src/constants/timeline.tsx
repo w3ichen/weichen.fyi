@@ -32,9 +32,12 @@ export type TimelineDetailsKey =
   | "weichen.fyi"
   | "lost_and_found"
   | "earls"
-  | "lab_18648"
+  | "class_18648"
   | "techstars_2024"
-  | "elections_2023";
+  | "elections_2023"
+  | "volunteering"
+  | "class_18744"
+  | "class_cmput301";
 
 export const TIMELINE_DETAILS: { [role: Role]: TimelineDetailsKey[] } = {
   [ROLES.ROBOTICIST]: ["patrick_robot", "hasselhoff_bot", "cesar_robot"],
@@ -49,7 +52,15 @@ export const TIMELINE_DETAILS: { [role: Role]: TimelineDetailsKey[] } = {
   ],
   [ROLES.STUDENT]: ["cmu", "ualberta", "scona"],
   [ROLES.CREATOR]: ["lost_and_found", "w3ichen.github.io", "uatkd_social"],
-  [ROLES.LOST]: ["earls", "lab_18648", "techstars_2024", "elections_2023"],
+  [ROLES.LOST]: [
+    "earls",
+    "class_18648",
+    "techstars_2024",
+    "class_18744",
+    "class_cmput301",
+    "elections_2023",
+    "volunteering",
+  ],
 };
 
 export const ALL_TIMELINE_DETAILS: Record<TimelineDetailsKey, TimelineDetail> =
@@ -238,15 +249,15 @@ export const ALL_TIMELINE_DETAILS: Record<TimelineDetailsKey, TimelineDetail> =
       skills: skills.EARLS_SKILLS_META,
       url: "https://earls.ca",
     },
-    lab_18648: {
+    class_18648: {
       company: "Embedded Real-Time Systems Class @ CMU",
       position: "Linux Kernel OS for Android Tablet",
       startDate: { year: 2024, month: 9 },
       endDate: { year: 2024, month: 12 },
       logo: "student/cmu_logo.jpg",
       location: "Pittsburgh, USA",
-      skills_meta: skills.LAB_18648_META,
-      skills: skills.LAB_18648_META,
+      skills_meta: skills.CLASS_18648_META,
+      skills: skills.CLASS_18648_META,
       url: "https://github.com/18648CMUFall24/lab0-cmu",
     },
     techstars_2024: {
@@ -270,5 +281,38 @@ export const ALL_TIMELINE_DETAILS: Record<TimelineDetailsKey, TimelineDetail> =
       skills_meta: skills.ELECTIONS_2023_SKILLS_META,
       skills: skills.ELECTIONS_2023_SKILLS_META,
       url: "https://www.elections.ab.ca",
+    },
+    volunteering: {
+      company: "Various Volunteer Experiences",
+      position:
+        "Edm Fringe Festival, Heritage Festival, Taste of Edm, Spring Triathlon, Edm Food Bank, Ice on Whyte Festival, Reuse Centre",
+      startDate: null,
+      endDate: null,
+      location: "Edmonton, Canada",
+      skills_meta: skills.VOLUNTEERING_SKILLS_META,
+      skills: skills.VOLUNTEERING_SKILLS_META,
+      url: "",
+    },
+    class_18744: {
+      company: "Autonomous Driving Class @ CMU",
+      position: "Autonomous Parking in CARLA Simulator",
+      startDate: { year: 2024, month: 1 },
+      endDate: { year: 2024, month: 4 },
+      logo: "student/cmu_logo.jpg",
+      location: "Pittsburgh, USA",
+      skills_meta: skills.CLASS_18744_SKILLS_META,
+      skills: skills.CLASS_18744_SKILLS_META,
+      url: "https://github.com/Louis2099/autonomous_parking_project",
+    },
+    class_cmput301: {
+      company: "Intro to Software Engineering @ UAlberta",
+      position: "QR Go: Android App to hunt the coolest QR codes",
+      startDate: { year: 2022, month: 1 },
+      endDate: { year: 2022, month: 4 },
+      logo: "student/ualberta_logo.jpg",
+      location: "Edmonton, Canada",
+      skills_meta: skills.CLASS_CMPUT301_SKILLS_META,
+      skills: skills.CLASS_CMPUT301_SKILLS_META,
+      url: "https://github.com/CMPUT301W22T16/QR-Go",
     },
   };

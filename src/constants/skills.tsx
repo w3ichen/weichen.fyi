@@ -20,6 +20,7 @@ export const W3ICHEN_GITHUB_IO_SKILLS_META: Skill[] = [
   "Animation",
   "Maya",
   "Blender",
+  "Photoshop",
 ];
 
 export const UATKD_SOCIAL_SKILLS_META: Skill[] = [
@@ -87,6 +88,7 @@ export const BACKSCNR_SKILLS: Skill[] = [
   "AWS",
   "DigitalOcean",
   "iOS",
+  "Xcode",
   "Kubernetes",
   "Linux",
   "Docker",
@@ -99,13 +101,13 @@ export const BACKSCNR_SKILLS: Skill[] = [
 export const MECSIMCALC_SKILLS_META: Skill[] = [
   "Engineering",
   "Startup",
-  "Cloud Computing",
   "AWS",
   "Python",
   "WebDev",
   "Django",
   "ReactJS",
   "Leadership",
+  "Cloud Computing",
 ];
 export const MECSIMCALC_SKILLS: Skill[] = [
   "Engineering",
@@ -145,9 +147,9 @@ export const MECSIMCALC_SKILLS: Skill[] = [
 export const UATKD_PREZ_SKILLS_META: Skill[] = [
   "Athletics",
   "Leadership",
-  "Conflict Resolution",
   "Public Speaking",
   "Networking",
+  "Conflict Resolution",
 ];
 
 export const PATRICK_ROBOT_SKILLS_META: Skill[] = [
@@ -281,6 +283,7 @@ export const UALBERTA_ENG_SKILLS: Skill[] = [
   "CivE",
   "BME",
   "Python",
+  "MATLAB",
   "Git",
   "Videography",
   "WebDev",
@@ -304,10 +307,9 @@ export const UALBERTA_ENG_SKILLS: Skill[] = [
 
 export const WEICHEN_FYI_SKILLS_META: Skill[] = [
   "WebDev",
-  "NextJS",
   "ReactJS",
   "TypeScript",
-  "Git",
+  "Photoshop",
 ];
 
 export const LOST_FOUND_SKILLS_META: Skill[] = [
@@ -323,7 +325,7 @@ export const EARLS_SKILLS_META: Skill[] = [
   "Public Speaking",
 ];
 
-export const LAB_18648_META: Skill[] = [
+export const CLASS_18648_META: Skill[] = [
   "Linux",
   "C",
   "Embedded",
@@ -341,4 +343,21 @@ export const TECHSTARS_2024_SKILLS_META: Skill[] = [
 export const ELECTIONS_2023_SKILLS_META: Skill[] = [
   "Teamwork",
   "Customer Service",
+];
+
+export const VOLUNTEERING_SKILLS_META: Skill[] = [
+  "Volunteering",
+  "Teamwork",
+  "Customer Service",
+];
+
+export const CLASS_18744_SKILLS_META: Skill[] = ["Python", "CS", "CARLA"];
+
+export const CLASS_CMPUT301_SKILLS_META: Skill[] = [
+  "CS",
+  "Android Studio",
+  "Java",
+  "OOP",
+  "UML",
+  "Git",
 ];

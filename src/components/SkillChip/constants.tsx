@@ -7,7 +7,7 @@ export const SKILL_TYPES_COLORS: { [type: string]: ChipProps["color"] } = {
   CATEGORY: "info",
   HARDWARE: "warning",
   PLATFORM: "error",
-  SOFT_SKILL: "default",
+  SOFT_SKILL: "pink",
 };
 export type SkillType = keyof typeof SKILL_TYPES_COLORS;
 
@@ -41,6 +41,8 @@ export const SKILLS: { [skill: string]: SkillType } = {
   "Machine Learning": "CATEGORY",
   "Neural Architecture Search": "CATEGORY",
   "Concurrent Programming": "CATEGORY",
+  OOP: "CATEGORY",
+  UML: "CATEGORY",
   // LANGUAGE
   Python: "LANGUAGE",
   C: "LANGUAGE",
@@ -51,6 +53,8 @@ export const SKILLS: { [skill: string]: SkillType } = {
   SQL: "LANGUAGE",
   Markdown: "LANGUAGE",
   Mathematica: "LANGUAGE",
+  MATLAB: "LANGUAGE",
+  Java: "LANGUAGE",
   // LIBRARY
   ROS1: "LIBRARY",
   Gazebo: "LIBRARY",
@@ -108,6 +112,10 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Overleaf: "APPLICATION",
   Figma: "APPLICATION",
   Jira: "APPLICATION",
+  Xcode: "APPLICATION",
+  Photoshop: "APPLICATION",
+  CARLA: "APPLICATION",
+  "Android Studio": "APPLICATION",
   // Soft Skills
   Leadership: "SOFT_SKILL",
   "Conflict Resolution": "SOFT_SKILL",

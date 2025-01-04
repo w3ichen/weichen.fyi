@@ -20,9 +20,16 @@ declare module "@mui/material/styles" {
     youtubeRed?: SimplePaletteColorOptions;
     instagramPink?: SimplePaletteColorOptions;
     appstoreBlue?: SimplePaletteColorOptions;
+    pink?: SimplePaletteColorOptions;
   }
   interface Palette extends CustomPalette {}
   interface PaletteOptions extends CustomPalette {}
+}
+
+declare module "@mui/material/Chip" {
+  interface ChipPropsColorOverrides {
+    pink: true;
+  }
 }
 declare module "@mui/material/Button" {
   interface ButtonPropsColorOverrides {
@@ -31,6 +38,7 @@ declare module "@mui/material/Button" {
     youtubeRed: true;
     instagramPink: true;
     appstoreBlue: true;
+    pink: true;
   }
 }
 ///////////////////////////////////////////////////////////////////////////////
@@ -56,6 +64,7 @@ theme = createTheme({
     youtubeRed: createColor("#FF0000"),
     instagramPink: createColor("#c13584"),
     appstoreBlue: createColor("#1c7cf2"),
+    pink: createColor("#e91e63"),
   },
   typography: {
     fontFamily: "Helvetica, Arial, sans-serif",

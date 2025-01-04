@@ -43,7 +43,12 @@ export default function TimelineCard({
       <CardActionArea>
         <Link href={url} passHref style={{ color: "inherit" }}>
           <CardContent sx={{ pb: "5px !important" }}>
-            <Typography variant="subtitle1" fontWeight={500}>
+            <Typography
+              variant="subtitle1"
+              fontWeight={500}
+              lineHeight={1.1}
+              gutterBottom
+            >
               {position}
             </Typography>
             <Typography variant="subtitle2">{company}</Typography>
@@ -56,8 +61,8 @@ export default function TimelineCard({
             {skills_meta.map((skill, i) => (
               <SkillChip key={`skill-${i}`} skill={skill} />
             ))}
-            <UnfoldMore color="action" sx={{ ml: "auto" }} />
           </Stack>
+          <UnfoldMore color="action" sx={{ ml: "auto" }} />
         </CardActions>
       </CardActionArea>
     </StyledCard>

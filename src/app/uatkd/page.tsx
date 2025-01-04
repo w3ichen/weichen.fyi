@@ -30,6 +30,11 @@ export default function UatkdPage() {
             type: "web",
           },
           {
+            url: "https://github.com/UAlberta-Taekwondo-Club",
+            text: "Github",
+            type: "github",
+          },
+          {
             url: "https://www.instagram.com/ua_taekwondo",
             text: "@ua_taekwondo",
             type: "instagram",
