@@ -96,7 +96,7 @@ export default function UAlbertaEngPage() {
 
       <CaptionedImage
         src="swe/ualberta_eng_pipeline.jpg"
-        title="Pipeline Simulation"
+        title="Monte Carlo Simulation"
         caption="I helped a Ph.D. student parallelize their Monte Carlo simulation code in Python, reducing runtime from 74 days to just 14 hours (a 100x speedup) using Numba and Concurrent Futures. This work led to my co-authorship in their papers on pipeline failure probability."
         mt={SECTION_PT}
         links={[
