@@ -1,5 +1,5 @@
 import { ROLES } from "@/components/Page/PageContext";
-import { Stack, styled, Typography } from "@mui/material";
+import { alpha, Stack, styled, Typography } from "@mui/material";
 import NavButton from "./NavButton";
 import Link from "next/link";
 
@@ -11,7 +11,7 @@ const Root = styled("nav")(({ theme }) => ({
   padding: "15px 40px",
   flexDirection: "row",
   gap: "10px",
-  backgroundColor: "rgba(255, 255, 255, 0.9)", // Translucent background
+  backgroundColor: alpha(theme.palette.background.default, 0.9), // Translucent background
   height: "fit-content",
   zIndex: 5,
   fontFamily: "Georgia",

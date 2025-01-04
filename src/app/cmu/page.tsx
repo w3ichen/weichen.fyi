@@ -7,7 +7,6 @@ import { Container, styled, Typography } from "@mui/material";
 import { CMU_CERTIFICATES, CMU_CLASSES, CMU_RESEARCH_LABS } from "./constants";
 
 const Root = styled(Container)(({}) => ({
-  // fontFamily: "Open Sans", // Open Sans is CMU's official font
   fontWeight: 300,
   "& .MuiTypography-root": {
     fontFamily: "inherit",

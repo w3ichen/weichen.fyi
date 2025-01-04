@@ -1,10 +1,10 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import type { Metadata } from "next";
-import "./globals.css";
-import { theme } from "../constants/theme";
 import Script from "next/script";
-import { Open_Sans } from "next/font/google";
 import { Suspense } from "react";
+import { theme } from "../constants/theme";
+import "./globals.css";
+import PageBase from "@/components/Page/PageBase";
 
 export const metadata: Metadata = {
   title: "Weichen Qiu",
@@ -38,19 +38,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Import fonts
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  display: "swap",
-});
-import { Roboto } from "next/font/google";
-import PageBase from "@/components/Page/PageBase";
-
-const roboto = Roboto({
-  weight: "400",
-  subsets: ["latin"],
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -58,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <ThemeProvider theme={theme}>
-      <html lang="en" className={`${openSans.className} ${roboto.className}`}>
+      <html lang="en">
         <Script
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}

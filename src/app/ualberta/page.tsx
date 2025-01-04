@@ -14,7 +14,6 @@ import {
 } from "./constants";
 
 const Root = styled(Container)(({}) => ({
-  // fontFamily: "Roboto", // Roboto is UAlberta's official font
   "& .MuiTypography-root": {
     fontFamily: "inherit",
     fontWeight: "inherit",

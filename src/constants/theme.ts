@@ -50,9 +50,12 @@ export const createColor = (mainColor: string): SimplePaletteColorOptions =>
     color: { main: mainColor },
   });
 theme = createTheme({
+  colorSchemes: {
+    dark: true,
+  },
   palette: {
     mode: "light",
-    primary: createColor("#C41230"),
+    primary: createColor("#01579B"),
     background: {
       footer: "#000000", // black
     },

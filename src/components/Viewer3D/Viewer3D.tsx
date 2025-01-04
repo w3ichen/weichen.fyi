@@ -25,7 +25,7 @@ export default function Viewer3D({
     <Canvas
       key={glbFile || objFile}
       id={glbFile || objFile}
-      style={{ height, width }}
+      style={{ height, width, borderRadius: "30px" }}
       // Camera position: [x, y, z], y is up, fov 50 is similar to human eye
       camera={{ position: cameraPosition, fov: 50 }} // Initial camera position
     >

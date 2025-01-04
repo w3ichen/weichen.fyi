@@ -21,6 +21,7 @@ export const PageContext = React.createContext<PageContextInterface>({
 });
 
 export const DEFAULT_ROLE = ROLES.ROBOTICIST;
+export const DARK_MODE_ROLES = [ROLES.SWE];
 
 export const HOME_HERO: { [role: Role]: { cover: string; profile: string } } = {
   [ROLES.ROBOTICIST]: {

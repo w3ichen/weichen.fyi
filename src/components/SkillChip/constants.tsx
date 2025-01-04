@@ -1,7 +1,7 @@
 import { ChipProps } from "@mui/material";
 
 export const SKILL_TYPES_COLORS: { [type: string]: ChipProps["color"] } = {
-  LANGUAGE: "primary",
+  LANGUAGE: "error",
   LIBRARY: "secondary",
   APPLICATION: "success",
   CATEGORY: "info",

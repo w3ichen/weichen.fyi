@@ -19,7 +19,7 @@ export default function BackSCNRPage() {
     <Root maxWidth="md">
       <TitleWithLogo
         title="BackSCNR"
-        imgSrc="entrepreneur/backscnr_logo2.jpg"
+        imgSrc="entrepreneur/backscnr_logo2.png"
       />
       <HeroImageBase
         src="entrepreneur/backscnr_hero.jpg"

@@ -18,7 +18,7 @@ export default function MecSimCalcPage() {
     <Root maxWidth="md">
       <TitleWithLogo
         title="MecSimCalc"
-        imgSrc="entrepreneur/mecsimcalc_logo2.jpg"
+        imgSrc="entrepreneur/mecsimcalc_logo2.png"
       />
       <HeroImageBase
         src="entrepreneur/mecsimcalc_hero.jpg"

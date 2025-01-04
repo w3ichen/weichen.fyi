@@ -1,13 +1,13 @@
-import { styled } from "@mui/material";
-import React from "react";
-import { useSpring, animated, to } from "@react-spring/web";
+import { styled, Theme } from "@mui/material";
+import { animated, to, useSpring } from "@react-spring/web";
 import { useGesture } from "@use-gesture/react";
-import { HeroImageBase } from "./common";
-import { DEFAULT_ROLE, HOME_HERO, Role } from "../Page/PageContext";
 import { get } from "lodash";
+import React from "react";
+import { DEFAULT_ROLE, HOME_HERO, Role } from "../Page/PageContext";
 
 export const PROFILE_IMG_SIZE = 200;
 export const COVER_IMG_HEIGHT = 300;
+const IMG_TRANSITION = "all .3s ease-in-out";
 
 const calcX = (y: number, ly: number) =>
   -(y - ly - window.innerHeight / 2) / 20;
@@ -20,30 +20,45 @@ const Root = styled("div")(({}) => ({
   position: "relative",
 }));
 
-const ProfileImage = styled("img")(({ theme }) => ({
-  position: "absolute",
-  objectFit: "cover",
-  objectPosition: "center",
-  borderRadius: "50%",
-  width: PROFILE_IMG_SIZE + "px",
-  height: PROFILE_IMG_SIZE + "px",
-  bottom: `-${PROFILE_IMG_SIZE / 2}px`,
-  left: `calc(50% - ${PROFILE_IMG_SIZE / 2}px)`,
-  boxShadow: theme.shadows[10],
-  //   transition: "box-shadow 1s",
-  transition: "box-shadow 0.5s",
-  "&:hover": {
-    // On hover, increase the shadow
-    boxShadow: theme.shadows[20],
-  },
-  border: `3px solid ${theme.palette.primary.dark}`,
-}));
+const ProfileImage = styled("div")(
+  ({ theme, src }: { theme?: Theme; src: string }) => ({
+    position: "absolute",
+    objectFit: "cover",
+    objectPosition: "center",
+    borderRadius: "50%",
+    width: PROFILE_IMG_SIZE + "px",
+    height: PROFILE_IMG_SIZE + "px",
+    bottom: `-${PROFILE_IMG_SIZE / 2}px`,
+    left: `calc(50% - ${PROFILE_IMG_SIZE / 2}px)`,
+    boxShadow: theme!.shadows[10],
+    transition: IMG_TRANSITION,
+    border: `3px solid ${theme!.palette.primary.dark}`,
+    backgroundImage: `url(${src})`, // Transition needs to be background-image
+    backgroundSize: "cover",
+    "&:hover": {
+      // On hover, increase the shadow
+      boxShadow: theme!.shadows[20],
+    },
+  })
+);
 
-const CoverImage = styled(HeroImageBase)(({}) => ({
+const CoverImage = styled("div")(({ src }: { theme?: Theme; src: string }) => ({
   // Force the same height
   minHeight: COVER_IMG_HEIGHT + "px",
   maxHeight: COVER_IMG_HEIGHT + "px",
   height: COVER_IMG_HEIGHT + "px",
+
+  width: "100%",
+  objectFit: "cover",
+  backgroundSize: "cover",
+  objectPosition: "center",
+  borderRadius: "30px",
+
+  // Smooth transition
+  backgroundImage: `url(${src})`, // Transition needs to be background-image
+  transition: IMG_TRANSITION,
+  WebkitTransition: IMG_TRANSITION,
+  MozTransition: IMG_TRANSITION,
 }));
 
 interface Props {
@@ -82,7 +97,7 @@ export default function HomeHeroImage({ role }: Props) {
   );
   return (
     <Root>
-      <CoverImage src={cover} alt="cover image" />
+      <CoverImage src={cover} />
       <animated.div
         ref={domTarget}
         style={{
@@ -93,7 +108,7 @@ export default function HomeHeroImage({ role }: Props) {
           rotateZ,
         }}
       >
-        <ProfileImage src={profile} alt="profile image" />
+        <ProfileImage src={profile} />
       </animated.div>
     </Root>
   );

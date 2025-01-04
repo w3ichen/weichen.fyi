@@ -19,6 +19,7 @@ const Root = styled(Container)(({}) => ({
   flexDirection: "column",
   alignItems: "center",
   gap: "20px",
+  paddingTop: "20px",
 }));
 
 export default function SearchPage() {
@@ -71,31 +72,33 @@ export default function SearchPage() {
       )}
 
       <Divider sx={{ width: "100%", my: 3 }} />
-      <Typography variant="h5" fontWeight="bold">
-        All my skills
-      </Typography>
-      {skillTypes.map((skillType) => {
-        const skills = Object.entries(SKILLS).filter(
-          ([, type]) => type == skillType
-        );
-        return (
-          <>
-            <Typography variant="h6">
-              {capitalize(skillType.replaceAll("_", " "))}
-            </Typography>
-            <Stack
-              direction="row"
-              width="100%"
-              flexWrap="wrap"
-              justifyContent="center"
-            >
-              {skills.map(([skill], i) => (
-                <SkillChip key={`skill-${skillType}-${i}`} skill={skill} />
-              ))}
-            </Stack>
-          </>
-        );
-      })}
+      <Container maxWidth="md" sx={{ textAlign: "center" }}>
+        <Typography variant="h5" fontWeight="bold">
+          All my skills
+        </Typography>
+        {skillTypes.map((skillType) => {
+          const skills = Object.entries(SKILLS).filter(
+            ([, type]) => type == skillType
+          );
+          return (
+            <>
+              <Typography variant="h6" mt={2} mb={1}>
+                {capitalize(skillType.replaceAll("_", " "))}
+              </Typography>
+              <Stack
+                direction="row"
+                width="100%"
+                flexWrap="wrap"
+                justifyContent="center"
+              >
+                {skills.map(([skill], i) => (
+                  <SkillChip key={`skill-${skillType}-${i}`} skill={skill} />
+                ))}
+              </Stack>
+            </>
+          );
+        })}
+      </Container>
     </Root>
   );
 }

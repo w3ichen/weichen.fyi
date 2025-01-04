@@ -1,5 +1,15 @@
-import { PageContext, Role } from "@/components/Page/PageContext";
-import { ButtonBase, styled, Theme, Typography } from "@mui/material";
+import {
+  DARK_MODE_ROLES,
+  PageContext,
+  Role,
+} from "@/components/Page/PageContext";
+import {
+  ButtonBase,
+  styled,
+  Theme,
+  Typography,
+  useColorScheme,
+} from "@mui/material";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -33,6 +43,7 @@ interface Props {
 }
 export default function NavButton({ role, label }: Props) {
   const { role: selectedRole, setRole } = React.useContext(PageContext);
+  const { mode, setMode } = useColorScheme();
   const router = useRouter();
 
   const selected = role === selectedRole;
@@ -41,6 +52,12 @@ export default function NavButton({ role, label }: Props) {
     setRole(role);
     // Set role in url query
     router.push("/?is=" + role, { scroll: false });
+    // Set dark mode based on role
+    if (DARK_MODE_ROLES.includes(role)) {
+      if (mode != "dark") setMode("dark");
+    } else {
+      if (mode != "light") setMode("light");
+    }
   };
 
   return (
