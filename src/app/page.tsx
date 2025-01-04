@@ -8,6 +8,7 @@ import {
   ROLES,
 } from "@/components/Page/PageContext";
 import Timeline from "@/components/Timeline/Timeline";
+import TimelineFooter from "@/components/Timeline/TimelineFooter";
 import { ALL_TIMELINE_DETAILS, TIMELINE_DETAILS } from "@/constants/timeline";
 import { Container } from "@mui/material";
 import { get } from "lodash";
@@ -40,6 +41,7 @@ export default function HomePage() {
     <Container maxWidth="xl">
       <HomeHeroImage role={role} />
       <Timeline details={timelineEntries} />
+      <TimelineFooter role={role} />
     </Container>
   );
 }
