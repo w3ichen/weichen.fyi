@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Weichen Qiu",
   description:
     "Weichen's Portfolio | Roboticist | Entrepreneur | SWE | Student | Creator",
+  metadataBase: new URL("https://weichen.fyi"),
   authors: [{ name: "Weichen Qiu", url: "https://weichen.fyi" }],
   keywords: [
     "Weichen Qiu",
