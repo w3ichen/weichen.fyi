@@ -7,6 +7,7 @@ export const ROLES = {
   SWE: "swe", // SWE = Software Engineer"
   STUDENT: "student",
   CREATOR: "creator",
+  LOST: "lost",
 };
 export type Role = ValueOf<typeof ROLES>;
 

@@ -9,7 +9,7 @@ import SkillChip from "@/components/SkillChip/SkillChip";
 import Timeline from "@/components/Timeline/Timeline";
 import { ALL_TIMELINE_DETAILS, TimelineDetail } from "@/constants/timeline";
 import { Container, Divider, Stack, styled, Typography } from "@mui/material";
-import { capitalize, isEmpty } from "lodash";
+import { capitalize, get, isEmpty } from "lodash";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect } from "react";
 
@@ -43,11 +43,11 @@ export default function SearchPage() {
         if (a.endDate === "Present") return -1;
         if (b.endDate === "Present") return 1;
         // Compare by year
-        if (a.endDate.year !== b.endDate.year) {
-          return b.endDate.year - a.endDate.year;
+        if (get(a, "endDate.year") !== get(b, "endDate.year")) {
+          return get(b, "endDate.year", 0) - get(a, "endDate.year", 0);
         }
         // Fallback to comparing by month
-        return b.endDate.month - a.endDate.month;
+        return get(b, "endDate.month", 0) - get(a, "endDate.month", 0);
       });
       // (6) Set search results to the filtered results
       setSearchResults(results);

@@ -30,6 +30,7 @@ export const UATKD_SOCIAL_SKILLS_META: Skill[] = [
 ];
 export const UATKD_SKILLS: Skill[] = [
   "Leadership",
+  "Teamwork",
   "Conflict Resolution",
   "Public Speaking",
   "Networking",
@@ -183,6 +184,7 @@ export const HASSELHOFF_BOT_SKILLS: Skill[] = [
   "Embedded",
   "Embedded Systems",
   "Nucleo STM32 Board",
+  "Teamwork",
   "16878 Advanced Mechatronic Design Class",
 ];
 
@@ -306,4 +308,37 @@ export const WEICHEN_FYI_SKILLS_META: Skill[] = [
   "ReactJS",
   "TypeScript",
   "Git",
+];
+
+export const LOST_FOUND_SKILLS_META: Skill[] = [
+  "Volunteering",
+  "CS",
+  "Linux",
+  "Networking",
+];
+
+export const EARLS_SKILLS_META: Skill[] = [
+  "Teamwork",
+  "Customer Service",
+  "Public Speaking",
+];
+
+export const LAB_18648_META: Skill[] = [
+  "Linux",
+  "C",
+  "Embedded",
+  "Kernel",
+  "Android",
+];
+
+export const TECHSTARS_2024_SKILLS_META: Skill[] = [
+  "Startup",
+  "Public Speaking",
+  "Networking",
+  "Teamwork",
+];
+
+export const ELECTIONS_2023_SKILLS_META: Skill[] = [
+  "Teamwork",
+  "Customer Service",
 ];

@@ -5,8 +5,8 @@ import * as skills from "./skills";
 export interface TimelineDetail {
   company: string;
   position: string;
-  startDate: { year: number; month: number };
-  endDate: { year: number; month: number } | "Present";
+  startDate: { year: number; month: number } | null;
+  endDate: { year: number; month: number } | "Present" | null;
   logo?: string;
   location: string;
   skills_meta: Skill[];
@@ -29,7 +29,12 @@ export type TimelineDetailsKey =
   | "huawei"
   | "drivewyze"
   | "ualberta_eng"
-  | "weichen.fyi";
+  | "weichen.fyi"
+  | "lost_and_found"
+  | "earls"
+  | "lab_18648"
+  | "techstars_2024"
+  | "elections_2023";
 
 export const TIMELINE_DETAILS: { [role: Role]: TimelineDetailsKey[] } = {
   [ROLES.ROBOTICIST]: ["patrick_robot", "hasselhoff_bot", "cesar_robot"],
@@ -43,7 +48,8 @@ export const TIMELINE_DETAILS: { [role: Role]: TimelineDetailsKey[] } = {
     "weichen.fyi",
   ],
   [ROLES.STUDENT]: ["cmu", "ualberta", "scona"],
-  [ROLES.CREATOR]: ["w3ichen.github.io", "uatkd_social"],
+  [ROLES.CREATOR]: ["lost_and_found", "w3ichen.github.io", "uatkd_social"],
+  [ROLES.LOST]: ["earls", "lab_18648", "techstars_2024", "elections_2023"],
 };
 
 export const ALL_TIMELINE_DETAILS: Record<TimelineDetailsKey, TimelineDetail> =
@@ -210,5 +216,59 @@ export const ALL_TIMELINE_DETAILS: Record<TimelineDetailsKey, TimelineDetail> =
       skills_meta: skills.WEICHEN_FYI_SKILLS_META,
       skills: skills.WEICHEN_FYI_SKILLS_META,
       url: "https://github.com/w3ichen/weichen.fyi",
+    },
+    lost_and_found: {
+      company: "Miscellaneous Projects & Experiences",
+      position: "Lost & Found",
+      startDate: null,
+      endDate: "Present",
+      location: "",
+      skills_meta: skills.LOST_FOUND_SKILLS_META,
+      skills: skills.LOST_FOUND_SKILLS_META,
+      url: "/lost-and-found",
+    },
+    earls: {
+      company: "Earls Kitchen + Bar",
+      position: "Food Expeditor",
+      startDate: { year: 2018, month: 8 },
+      endDate: { year: 2019, month: 6 },
+      logo: "lost/earls_logo.jpg",
+      location: "Edmonton, Canada",
+      skills_meta: skills.EARLS_SKILLS_META,
+      skills: skills.EARLS_SKILLS_META,
+      url: "https://earls.ca",
+    },
+    lab_18648: {
+      company: "Embedded Real-Time Systems Class @ CMU",
+      position: "Linux Kernel OS for Android Tablet",
+      startDate: { year: 2024, month: 9 },
+      endDate: { year: 2024, month: 12 },
+      logo: "student/cmu_logo.jpg",
+      location: "Pittsburgh, USA",
+      skills_meta: skills.LAB_18648_META,
+      skills: skills.LAB_18648_META,
+      url: "https://github.com/18648CMUFall24/lab0-cmu",
+    },
+    techstars_2024: {
+      company: "TechStars Startup Weekend 2024",
+      position: "Anchored: Friendships on a Deeper Level",
+      startDate: null,
+      endDate: { year: 2024, month: 2 },
+      logo: "lost/techstars_2024_logo.png",
+      location: "Pittsburgh, USA",
+      skills_meta: skills.TECHSTARS_2024_SKILLS_META,
+      skills: skills.TECHSTARS_2024_SKILLS_META,
+      url: "https://w3ichen.github.io/anchored/deeper",
+    },
+    elections_2023: {
+      company: "Elections Alberta 2023",
+      position: "Voting Officer",
+      startDate: null,
+      endDate: { year: 2023, month: 5 },
+      logo: "lost/elections_2023_logo.jpg",
+      location: "Edmonton, Canada",
+      skills_meta: skills.ELECTIONS_2023_SKILLS_META,
+      skills: skills.ELECTIONS_2023_SKILLS_META,
+      url: "https://www.elections.ab.ca",
     },
   };

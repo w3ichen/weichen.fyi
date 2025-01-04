@@ -51,19 +51,24 @@ export default function TimelineEntry(props: TimelineDetail) {
   const { startDate, endDate, company, logo } = props;
 
   // Calculate the date, and date range
-  const start = dateFormatter.format(
-    new Date(startDate.year, startDate.month - 1)
-  );
-  const end = isString(endDate)
-    ? endDate
-    : dateFormatter.format(new Date(endDate.year, endDate.month - 1));
+  const start = !!startDate
+    ? dateFormatter.format(new Date(startDate.year, startDate.month - 1))
+    : "";
+  const end = !!endDate
+    ? isString(endDate)
+      ? endDate
+      : dateFormatter.format(new Date(endDate.year, endDate.month - 1))
+    : "";
 
-  const duration = calcDuration(
-    startDate.year,
-    startDate.month,
-    get(endDate, "year"),
-    get(endDate, "month")
-  );
+  const duration =
+    !!startDate && !!endDate
+      ? calcDuration(
+          startDate.year,
+          startDate.month,
+          get(endDate, "year"),
+          get(endDate, "month")
+        )
+      : "";
 
   return (
     <TimelineItem>
@@ -71,7 +76,7 @@ export default function TimelineEntry(props: TimelineDetail) {
         <ListItemText
           primary={
             <>
-              {start} <Dash>-</Dash> {end}
+              {start} {start && end && <Dash>-</Dash>} {end}
             </>
           }
           secondary={duration}

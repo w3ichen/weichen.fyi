@@ -9,7 +9,22 @@ import { Suspense } from "react";
 export const metadata: Metadata = {
   title: "Weichen Qiu",
   description: "Weichen Qiu's Portfolio",
+  authors: [{ name: "Weichen Qiu", url: "https://weichen.fyi" }],
+  keywords: [
+    "Weichen Qiu",
+    "Weichen",
+    "Qiu",
+    "w3ichen",
+    "Portfolio",
+    "Projects",
+    "Resume",
+    "CV",
+  ],
+  openGraph: {
+    images: "/thumbnail.jpg",
+  },
 };
+
 // Import fonts
 const openSans = Open_Sans({
   subsets: ["latin"],

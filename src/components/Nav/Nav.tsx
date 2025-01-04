@@ -39,6 +39,13 @@ const ButtonsContainer = styled("div")(({ theme }) => ({
 }));
 
 export default function Nav() {
+  const navItems = [
+    ROLES.ROBOTICIST,
+    ROLES.ENTREPRENEUR,
+    ROLES.SWE,
+    ROLES.STUDENT,
+    ROLES.CREATOR,
+  ];
   return (
     <Root>
       <Link href="/" passHref style={{ color: "inherit" }}>
@@ -52,7 +59,7 @@ export default function Nav() {
         </Stack>
       </Link>
       <ButtonsContainer>
-        {Object.values(ROLES).map((role) => (
+        {navItems.map((role) => (
           <NavButton key={role} role={role} label={role} />
         ))}
       </ButtonsContainer>

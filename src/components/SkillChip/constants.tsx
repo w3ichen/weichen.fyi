@@ -87,6 +87,8 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Embedded: "HARDWARE",
   "Embedded Systems": "HARDWARE",
   Arduino: "HARDWARE",
+  Kernel: "HARDWARE",
+  Android: "HARDWARE",
   // Platform
   Linux: "PLATFORM",
   Docker: "PLATFORM",
@@ -115,6 +117,8 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Negotiation: "SOFT_SKILL",
   "Technical Writing": "SOFT_SKILL",
   "Agile Software Development": "SOFT_SKILL",
+  Teamwork: "SOFT_SKILL",
+  "Customer Service": "SOFT_SKILL",
 };
 
 export type Skill = keyof typeof SKILLS;
