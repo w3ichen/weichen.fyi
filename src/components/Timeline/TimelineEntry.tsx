@@ -14,18 +14,35 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
   year: "numeric",
 });
-const DOT_SIZE = 80;
+const DOT_SIZE_LG = 100; // Large screens
+const DOT_SIZE_SM = 80; // Small screens
 const SMALL_DOT_SIZE = 12; // Default small dot width
 const LEFT_WIDTH_SM = "21vw"; // For small screens, force the width to be 20vw
 
-const StyledTimelineDot = styled(TimelineDot)(({}) => ({
+const StyledTimelineDot = styled(TimelineDot)(({ theme }) => ({
   overflow: "hidden",
-  width: DOT_SIZE + "px",
-  height: DOT_SIZE + "px",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  // Make dot larger on bigger screens
+  width: DOT_SIZE_LG + "px",
+  height: DOT_SIZE_LG + "px",
+  [theme.breakpoints.down("sm")]: {
+    width: DOT_SIZE_SM + "px",
+    height: DOT_SIZE_SM + "px",
+  },
 }));
+const DotImg = styled("img")(({ theme }) => ({
+  // -4px to make the image slightly smaller than the dot
+  // Make dot larger on bigger screens
+  width: DOT_SIZE_LG - 4 + "px",
+  height: DOT_SIZE_LG - 4 + "px",
+  [theme.breakpoints.down("sm")]: {
+    width: DOT_SIZE_SM - 4 + "px",
+    height: DOT_SIZE_SM - 4 + "px",
+  },
+}));
+
 const OppositeContent = styled(TimelineOppositeContent)(({ theme }) => ({
   margin: "auto 0",
   paddingRight: theme.spacing(3),
@@ -86,16 +103,11 @@ export default function TimelineEntry(props: TimelineDetail) {
         <TimelineConnector />
         {!!logo ? (
           <StyledTimelineDot>
-            <img
-              src={logo}
-              alt={company}
-              // -4px to make the image slightly smaller than the dot
-              width={DOT_SIZE - 4 + "px"}
-              height={DOT_SIZE - 4 + "px"}
-            />
+            <DotImg src={logo} alt={company} />
           </StyledTimelineDot>
         ) : (
-          <TimelineDot sx={{ mx: (DOT_SIZE - SMALL_DOT_SIZE) / 2 + "px" }} />
+          // Calculate margin to center the small dot
+          <TimelineDot sx={{ mx: (DOT_SIZE_SM - SMALL_DOT_SIZE) / 2 + "px" }} />
         )}
 
         <TimelineConnector />

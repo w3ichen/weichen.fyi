@@ -35,6 +35,7 @@ const ProfileImage = styled("div")(
     border: `3px solid ${theme!.palette.primary.dark}`,
     backgroundImage: `url(${src})`, // Transition needs to be background-image
     backgroundSize: "cover",
+    backgroundPosition: "center",
     "&:hover": {
       // On hover, increase the shadow
       boxShadow: theme!.shadows[20],
@@ -56,6 +57,7 @@ const CoverImage = styled("div")(({ src }: { theme?: Theme; src: string }) => ({
 
   // Smooth transition
   backgroundImage: `url(${src})`, // Transition needs to be background-image
+  backgroundPosition: "center",
   transition: IMG_TRANSITION,
   WebkitTransition: IMG_TRANSITION,
   MozTransition: IMG_TRANSITION,
