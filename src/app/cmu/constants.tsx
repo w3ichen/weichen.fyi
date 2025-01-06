@@ -47,6 +47,8 @@ export const CMU_CLASSES: { [semester: string]: string[] } = {
     "16-880 Engineering Haptic Interfaces",
     "18-349 Introduction to Embedded Systems",
     "51-264 Product Design Fundamentals",
+    "16-820 Advanced Computer Vision",
+    "16-745 Optimal Control and Reinforcement Learning",
   ],
   "Fall 2024": [
     "16-878 Advanced Mechatronic Design",
