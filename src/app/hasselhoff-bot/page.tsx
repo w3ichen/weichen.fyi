@@ -22,7 +22,16 @@ export default function HasselhoffBotPage() {
 
       <HeroImageBase src="roboticist/hasselhoff_hero.jpg" />
 
-      <ProjectMetadata skills={HASSELHOFF_BOT_SKILLS} />
+      <ProjectMetadata
+        skills={HASSELHOFF_BOT_SKILLS}
+        buttons={[
+          {
+            url: "https://github.com/scott-wade/hasselhoff-bot",
+            text: "hasselhoff-bot",
+            type: "github",
+          },
+        ]}
+      />
       <CaptionedIframe
         src="https://www.youtube.com/embed/ljnBSBY5iik?si=eJXdFFbEcu_MqtOJ"
         title="The Mission"
