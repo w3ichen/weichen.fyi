@@ -43,10 +43,11 @@ export const CMU_CERTIFICATES: (string | ReactNode)[] = [
 
 export const CMU_CLASSES: { [semester: string]: string[] } = {
   "Spring 2025": [
-    "24-775 Bioinspired Robot Design and Experimentation",
+    "16-350 Planning Techniques for Robotics",
+    "18-842 Autonomous Robotics I",
     "16-880 Engineering Haptic Interfaces",
     "18-349 Introduction to Embedded Systems",
-    "51-264 Product Design Fundamentals",
+    "24-200 Maker Series: Intro to Manual Machining",
     "16-820 Advanced Computer Vision",
     "16-745 Optimal Control and Reinforcement Learning",
   ],
