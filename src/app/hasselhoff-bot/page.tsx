@@ -30,6 +30,11 @@ export default function HasselhoffBotPage() {
             text: "hasselhoff-bot",
             type: "github",
           },
+          {
+            url: "https://github.com/w3ichen/16878",
+            text: "16878 labs",
+            type: "github",
+          },
         ]}
       />
       <CaptionedIframe
