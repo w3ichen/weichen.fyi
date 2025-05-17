@@ -3,8 +3,13 @@
 import { HeroImageBase } from "@/components/HeroImage/common";
 import LinkNewTab from "@/components/Buttons/LinkNewTab";
 import TimelineList from "@/components/TimelineList/TimelineList";
-import { Container, styled, Typography } from "@mui/material";
-import { CMU_CERTIFICATES, CMU_CLASSES, CMU_RESEARCH_LABS } from "./constants";
+import { Container, Stack, styled, Typography } from "@mui/material";
+import {
+  CMU_CERTIFICATES,
+  CMU_CLASSES,
+  CMU_CLASSES_FOOTNOTES,
+  CMU_RESEARCH_LABS,
+} from "./constants";
 
 const Root = styled(Container)(({}) => ({
   fontWeight: 300,
@@ -107,6 +112,14 @@ export default function CmuPage() {
           </UnorderedList>
         </div>
       ))}
+
+      <Stack direction="column" spacing={0} pt={1}>
+        {CMU_CLASSES_FOOTNOTES.map((footnote, i) => (
+          <Typography variant="caption" key={`cmu-classes-footnote-${i}`}>
+            {footnote}
+          </Typography>
+        ))}
+      </Stack>
     </Root>
   );
 }

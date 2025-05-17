@@ -1,5 +1,6 @@
 import LinkNewTab from "@/components/Buttons/LinkNewTab";
 import { TimelineListItemProp } from "@/components/TimelineList/TimelineListItem";
+import Link from "next/link";
 import { ReactNode } from "react";
 
 export const CMU_RESEARCH_LABS: TimelineListItemProp[] = [
@@ -43,14 +44,14 @@ export const CMU_CERTIFICATES: (string | ReactNode)[] = [
 
 export const CMU_CLASSES: { [semester: string]: string[] } = {
   "Spring 2025": [
+    "16-880 Engineering Haptic Interfaces [1]",
+    "16-350 Planning Techniques for Robotics [2]",
+    "18-842 Autonomous Robotics I [3]",
     "18-349 Introduction to Embedded Systems",
-    "16-880 Engineering Haptic Interfaces",
-    "16-350 Planning Techniques for Robotics",
-    "18-842 Autonomous Robotics I",
     "24-200 Maker Series: Intro to Manual Machining",
   ],
   "Fall 2024": [
-    "16-878 Advanced Mechatronic Design",
+    "16-878 Advanced Mechatronic Design [4]",
     "18-648 Embedded Real-Time Systems",
     "24-760 Robot Dynamics and Analysis",
     "18-021 Introduction to Printed Circuit Boards Fabrication",
@@ -64,3 +65,30 @@ export const CMU_CLASSES: { [semester: string]: string[] } = {
     "18-989 Introduction to Graduate Studies",
   ],
 };
+
+export const CMU_CLASSES_FOOTNOTES: ReactNode[] = [
+  <>
+    [1]{" "}
+    <Link href="https://weichen.fyi/haptic-hand">
+      https://weichen.fyi/haptic-hand
+    </Link>
+  </>,
+  <>
+    [2]{" "}
+    <Link href="https://weichen.fyi/vegmap-planner">
+      https://weichen.fyi/vegmap-planner
+    </Link>
+  </>,
+  <>
+    [3]{" "}
+    <Link href="https://z4ziad.github.io/2025-05-13-auto_robo_update_2">
+      https://z4ziad.github.io/2025-05-13-auto_robo_update_2
+    </Link>
+  </>,
+  <>
+    [4]{" "}
+    <Link href="https://weichen.fyi/hasselhoff-bot">
+      https://weichen.fyi/hasselhoff-bot
+    </Link>
+  </>,
+];
