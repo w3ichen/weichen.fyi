@@ -66,6 +66,12 @@ export default function UAlbertaEngPage() {
         title="EPCOR Utilities"
         caption="I developed a Flask website for EPCOR, the largest utility in Edmonton, to identify areas with strong sewage odors based on a pipe pressure and airflow algorithm. I visualized the results using interactive heatmaps and pipe flow maps with LeafletJS."
         mt={SECTION_PT}
+        links={[
+          {
+            url: "https://airflow.app.mecsimcalc.com",
+            text: "[App] Airflow Model",
+          },
+        ]}
       />
 
       <CaptionedImage
