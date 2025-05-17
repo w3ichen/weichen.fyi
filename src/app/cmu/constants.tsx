@@ -14,7 +14,7 @@ export const CMU_RESEARCH_LABS: TimelineListItemProp[] = [
       </>
     ),
     startDate: { year: 2024, month: 3 },
-    endDate: "Present",
+    endDate: { year: 2025, month: 5 },
   },
   {
     primary: (
@@ -43,13 +43,11 @@ export const CMU_CERTIFICATES: (string | ReactNode)[] = [
 
 export const CMU_CLASSES: { [semester: string]: string[] } = {
   "Spring 2025": [
+    "18-349 Introduction to Embedded Systems",
+    "16-880 Engineering Haptic Interfaces",
     "16-350 Planning Techniques for Robotics",
     "18-842 Autonomous Robotics I",
-    "16-880 Engineering Haptic Interfaces",
-    "18-349 Introduction to Embedded Systems",
     "24-200 Maker Series: Intro to Manual Machining",
-    "16-820 Advanced Computer Vision",
-    "16-745 Optimal Control and Reinforcement Learning",
   ],
   "Fall 2024": [
     "16-878 Advanced Mechatronic Design",

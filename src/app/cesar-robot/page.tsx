@@ -46,7 +46,7 @@ export default function CesarRobotPage() {
       <CaptionedVideo
         src="roboticist/cesar_driving.mp4"
         title="The Hardware"
-        caption="I revived the CESAR robot after years in storage with minimal guidance or documentation. I reconnected all hardware and wiring, including the joystick, and tested components such as cameras, GPS, Wi-Fi, and motors to ensure they worked. I also refactored the code to resolve issues."
+        caption="I revived the CESAR robot after years in storage with minimal guidance or documentation. I reconnected all hardware and wiring, including the joystick, and tested components such as cameras, GPS, Wi-Fi, and motors to ensure they worked. The highly customized hardware lacked documentation, requiring extensive troubleshooting, refactoring, and reverse engineering."
         imgPosition="right"
         mt={SECTION_PT}
       />
