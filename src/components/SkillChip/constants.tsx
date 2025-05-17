@@ -46,6 +46,7 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Kinematics: "CATEGORY",
   Haptics: "CATEGORY",
   Algorithms: "CATEGORY",
+  Planning: "CATEGORY",
   // LANGUAGE
   Python: "LANGUAGE",
   C: "LANGUAGE",

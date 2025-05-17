@@ -15,8 +15,7 @@ export const VEGMAP_SKILLS: Skill[] = [
   "ROS2",
   "Gazebo",
   "RViz",
-  "Git",
-  "Teamwork",
+  "Planning",
   "16350 Planning Techniques for Robotics Class",
 ];
 

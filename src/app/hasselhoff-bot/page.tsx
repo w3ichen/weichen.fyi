@@ -5,6 +5,7 @@ import CaptionedImage from "@/components/HeroImage/CaptionedImage";
 import CaptionedVideo from "@/components/HeroImage/CaptionedVideo";
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
+import TitleWithLogo from "@/components/Page/TitleWithLogo";
 import Viewer3DWithImage from "@/components/Viewer3D/Viewer3DWithImage";
 import { HASSELHOFF_BOT_SKILLS } from "@/constants/skills";
 import { Container, styled, Typography } from "@mui/material";
@@ -16,9 +17,10 @@ const SECTION_PT = 2;
 export default function HasselhoffBotPage() {
   return (
     <Root maxWidth="md">
-      <Typography variant="h4" gutterBottom>
-        Hasselhoff Bot
-      </Typography>
+      <TitleWithLogo
+        title="Hasselhoff Bot"
+        imgSrc="student/cmu_lettermark.png"
+      />
 
       <HeroImageBase src="roboticist/hasselhoff_hero.jpg" />
 

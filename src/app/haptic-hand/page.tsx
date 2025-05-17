@@ -5,6 +5,7 @@ import CaptionedVideo from "@/components/HeroImage/CaptionedVideo";
 import CaptionedViewer3D from "@/components/HeroImage/CaptionedViewer3D";
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
+import TitleWithLogo from "@/components/Page/TitleWithLogo";
 import { HAPTIC_HAND_SKILLS } from "@/constants/skills";
 import { Container, styled, Typography } from "@mui/material";
 
@@ -15,9 +16,7 @@ const SECTION_PT = 2;
 export default function HapticHandPage() {
   return (
     <Root maxWidth="md">
-      <Typography variant="h4" gutterBottom>
-        Haptic Hand
-      </Typography>
+      <TitleWithLogo title="Haptic Hand" imgSrc="student/cmu_lettermark.png" />
 
       <HeroImageBase src="roboticist/haptic_hand_hero.jpg" />
 
