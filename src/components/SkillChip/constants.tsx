@@ -43,9 +43,13 @@ export const SKILLS: { [skill: string]: SkillType } = {
   "Concurrent Programming": "CATEGORY",
   OOP: "CATEGORY",
   UML: "CATEGORY",
+  Kinematics: "CATEGORY",
+  Haptics: "CATEGORY",
+  Algorithms: "CATEGORY",
   // LANGUAGE
   Python: "LANGUAGE",
   C: "LANGUAGE",
+  "C++": "LANGUAGE",
   HTML: "LANGUAGE",
   CSS: "LANGUAGE",
   JavaScript: "LANGUAGE",
@@ -57,6 +61,7 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Java: "LANGUAGE",
   // LIBRARY
   ROS1: "LIBRARY",
+  ROS2: "LIBRARY",
   Gazebo: "LIBRARY",
   RViz: "LIBRARY",
   TensorFlow: "LIBRARY",
@@ -93,6 +98,8 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Arduino: "HARDWARE",
   Kernel: "HARDWARE",
   Android: "HARDWARE",
+  "DC Motor": "HARDWARE",
+  "DC Motor Control": "HARDWARE",
   // Platform
   Linux: "PLATFORM",
   Docker: "PLATFORM",
@@ -116,6 +123,7 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Photoshop: "APPLICATION",
   CARLA: "APPLICATION",
   "Android Studio": "APPLICATION",
+  "Processing IDE": "APPLICATION",
   // Soft Skills
   Leadership: "SOFT_SKILL",
   "Conflict Resolution": "SOFT_SKILL",

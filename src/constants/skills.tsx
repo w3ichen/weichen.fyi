@@ -1,5 +1,50 @@
 import { Skill } from "@/components/SkillChip/constants";
 
+export const VEGMAP_SKILLS_META: Skill[] = [
+  "Robotics",
+  "C++",
+  "Algorithms",
+  "ROS2",
+  "Gazebo",
+];
+export const VEGMAP_SKILLS: Skill[] = [
+  "Robotics",
+  "CS",
+  "C++",
+  "Algorithms",
+  "ROS2",
+  "Gazebo",
+  "RViz",
+  "Git",
+  "Teamwork",
+  "16350 Planning Techniques for Robotics Class",
+];
+
+export const HAPTIC_HAND_SKILLS_META: Skill[] = [
+  "Robotics",
+  "C",
+  "Hardware",
+  "Haptics",
+  "Embedded",
+  "Kinematics",
+  "DC Motor Control",
+  "Processing IDE",
+];
+export const HAPTIC_HAND_SKILLS: Skill[] = [
+  "Robotics",
+  "C",
+  "Hardware",
+  "Haptics",
+  "Kinematics",
+  "DC Motor Control",
+  "Processing IDE",
+  "CAD",
+  "Embedded Systems",
+  "Nucleo STM32 Board",
+  "Teamwork",
+  "16880 Engineering Haptic Interfaces Class",
+];
+
 export const W3ICHEN_GITHUB_IO_SKILLS_META: Skill[] = [
   "Art",
   "Photography",
@@ -10,9 +55,9 @@ export const W3ICHEN_GITHUB_IO_SKILLS_META: Skill[] = [
   "WebDev",
   "HTML",
   "CSS",
-  "JavaScript",
   "Linux",
   "Python",
+  "JavaScript",
   "Arduino",
   "Unity",
   "CAD",
@@ -24,7 +69,6 @@ export const W3ICHEN_GITHUB_IO_SKILLS_META: Skill[] = [
 ];
 
 export const UATKD_SOCIAL_SKILLS_META: Skill[] = [
-  "Athletics",
   "Social Media",
   "Photography",
   "Videography",
@@ -147,9 +191,9 @@ export const MECSIMCALC_SKILLS: Skill[] = [
 export const UATKD_PREZ_SKILLS_META: Skill[] = [
   "Athletics",
   "Leadership",
+  "Conflict Resolution",
   "Public Speaking",
   "Networking",
-  "Conflict Resolution",
 ];
 
 export const PATRICK_ROBOT_SKILLS_META: Skill[] = [
@@ -157,7 +201,6 @@ export const PATRICK_ROBOT_SKILLS_META: Skill[] = [
   "Python",
   "ROS1",
   "Gazebo",
-  "RViz",
   "Linux",
 ];
 export const PATRICK_ROBOT_SKILLS: Skill[] = [
@@ -172,7 +215,6 @@ export const PATRICK_ROBOT_SKILLS: Skill[] = [
 export const HASSELHOFF_BOT_SKILLS_META: Skill[] = [
   "Robotics",
   "C",
-  "Hardware",
   "Circuits",
   "Embedded",
   "Soldering",
@@ -186,6 +228,7 @@ export const HASSELHOFF_BOT_SKILLS: Skill[] = [
   "Embedded",
   "Embedded Systems",
   "Nucleo STM32 Board",
+  "CAD",
   "Teamwork",
   "16878 Advanced Mechatronic Design Class",
 ];
@@ -205,7 +248,7 @@ export const CESAR_ROBOT_SKILLS: Skill[] = [
   "Linux",
 ];
 
-export const CMU_SKILLS_META: Skill[] = ["Robotics", "CS", "AI"];
+export const CMU_SKILLS_META: Skill[] = ["Robotics", "EE", "CS", "AI"];
 
 export const UALBERTA_SKILLS_META: Skill[] = ["CS", "EE", "CivE", "BME"];
 

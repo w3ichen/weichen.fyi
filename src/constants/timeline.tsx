@@ -15,6 +15,8 @@ export interface TimelineDetail {
 }
 
 export type TimelineDetailsKey =
+  | "haptic_hand"
+  | "vegmap"
   | "w3ichen.github.io"
   | "uatkd_social"
   | "backscnr"
@@ -40,7 +42,13 @@ export type TimelineDetailsKey =
   | "class_cmput301";
 
 export const TIMELINE_DETAILS: { [role: Role]: TimelineDetailsKey[] } = {
-  [ROLES.ROBOTICIST]: ["patrick_robot", "hasselhoff_bot", "cesar_robot"],
+  [ROLES.ROBOTICIST]: [
+    "patrick_robot",
+    "haptic_hand",
+    "vegmap",
+    "hasselhoff_bot",
+    "cesar_robot",
+  ],
   [ROLES.ENTREPRENEUR]: ["mecsimcalc", "backscnr", "uatkd_prez"],
   [ROLES.SWE]: [
     "backscnr",
@@ -65,6 +73,28 @@ export const TIMELINE_DETAILS: { [role: Role]: TimelineDetailsKey[] } = {
 
 export const ALL_TIMELINE_DETAILS: Record<TimelineDetailsKey, TimelineDetail> =
   {
+    haptic_hand: {
+      company: "Engineering Haptic Interfaces Class @ CMU",
+      position: "Haptic Hand",
+      startDate: { year: 2025, month: 3 },
+      endDate: { year: 2025, month: 4 },
+      logo: "roboticist/haptic_hand_logo.jpg",
+      location: "Pittsburgh, USA",
+      skills_meta: skills.HAPTIC_HAND_SKILLS_META,
+      skills: skills.HAPTIC_HAND_SKILLS,
+      url: "/haptic-hand",
+    },
+    vegmap: {
+      company: "Planning Techniques for Robotics Class @ CMU",
+      position: "Vegmap: Proprioceptive Navigation in Vegetation",
+      startDate: { year: 2025, month: 3 },
+      endDate: { year: 2025, month: 4 },
+      logo: "roboticist/vegmap_logo.jpg",
+      location: "Pittsburgh, USA",
+      skills_meta: skills.VEGMAP_SKILLS_META,
+      skills: skills.VEGMAP_SKILLS,
+      url: "/vegmap-planner",
+    },
     "w3ichen.github.io": {
       company: "w3ichen.github.io",
       position: "Portfolio Website v1",
@@ -76,8 +106,8 @@ export const ALL_TIMELINE_DETAILS: Record<TimelineDetailsKey, TimelineDetail> =
       url: "https://w3ichen.github.io",
     },
     backscnr: {
-      company: "Chief Technology Officer (CTO)",
-      position: "BackSCNR",
+      company: "BackSCNR",
+      position: "Chief Technology Officer (CTO)",
       startDate: { year: 2021, month: 8 },
       endDate: "Present",
       logo: "entrepreneur/backscnr_logo.jpg",
@@ -87,8 +117,8 @@ export const ALL_TIMELINE_DETAILS: Record<TimelineDetailsKey, TimelineDetail> =
       url: "/backscnr",
     },
     mecsimcalc: {
-      company: "Co-founder, Chief Technology Officer (CTO)",
-      position: "MecSimCalc",
+      company: "MecSimCalc",
+      position: "Co-founder, Chief Technology Officer (CTO)",
       startDate: { year: 2021, month: 6 },
       endDate: "Present",
       logo: "entrepreneur/mecsimcalc_logo.jpg",
