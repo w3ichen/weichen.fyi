@@ -1,12 +1,11 @@
 "use client";
 
 import CaptionedIframe from "@/components/HeroImage/CaptionedIframe";
-import CaptionedImage from "@/components/HeroImage/CaptionedImage";
 import CaptionedVideo from "@/components/HeroImage/CaptionedVideo";
+import CaptionedViewer3D from "@/components/HeroImage/CaptionedViewer3D";
 import { HeroImageBase } from "@/components/HeroImage/common";
 import ProjectMetadata from "@/components/Page/ProjectMetadata";
-import Viewer3DWithImage from "@/components/Viewer3D/Viewer3DWithImage";
-import { HASSELHOFF_BOT_SKILLS } from "@/constants/skills";
+import { HAPTIC_HAND_SKILLS } from "@/constants/skills";
 import { Container, styled, Typography } from "@mui/material";
 
 const Root = styled(Container)(({}) => ({}));
@@ -20,69 +19,60 @@ export default function HapticHandPage() {
         Haptic Hand
       </Typography>
 
-      <HeroImageBase src="roboticist/hasselhoff_hero.jpg" />
+      <HeroImageBase src="roboticist/haptic_hand_hero.jpg" />
 
       <ProjectMetadata
-        skills={HASSELHOFF_BOT_SKILLS}
+        skills={HAPTIC_HAND_SKILLS}
         buttons={[
           {
-            url: "https://github.com/scott-wade/hasselhoff-bot",
-            text: "hasselhoff-bot",
-            type: "github",
-          },
-          {
-            url: "https://github.com/w3ichen/16878",
-            text: "16878 labs",
+            url: "https://github.com/w3ichen/haptic-hand",
+            text: "haptic-hand",
             type: "github",
           },
         ]}
       />
       <CaptionedIframe
-        src="https://www.youtube.com/embed/ljnBSBY5iik?si=eJXdFFbEcu_MqtOJ"
-        title="The Mission"
-        caption="The Hasselhoff Bot is a small submarine inspired by David Hasselhoff's cameo in the 2004 SpongeBob Movie. In the movie, SpongeBob and Patrick explore the ocean in search of King Neptune's crown to cover his shiny, bald head and David Hasselhoff is the last “vehicle” that propels the two friends back to Bikini Bottom, where they return the crown to King Neptune."
+        src="https://www.youtube.com/embed/TPRUQxR6-_I?si=awFXhcoWokcSI6Qi"
+        title="The Motivation"
+        caption="The Haptic Hand is a low-cost, 3D-printed haptic device that delivers force feedback for hand interactions with virtual objects. It has promising applications as an educational tool with the SHRED Lab, and future work will integrate it to teleoperate a hand from the Foam Robotics Lab."
         mt={SECTION_PT}
+        links={[
+          {
+            text: "[Web] SHRED Haptics Lab",
+            url: "https://shredlabcmu.github.io",
+          },
+          {
+            text: "[Web] Foam Robotics Lab",
+            url: "https://labs.ri.cmu.edu/foamroboticslab",
+          },
+        ]}
       />
-      <CaptionedVideo
-        src="roboticist/hasselhoff_demo.mp4"
+      <CaptionedViewer3D
+        src="roboticist/haptic_hand.glb"
         title="How it works"
         imgPosition="right"
-        caption="Hasselhoff is a teleoperated submarine equipped with four waterproof motors, an IR beam receiver, and a tethered remote. Users have 99 seconds to navigate underwater, locate an IR beam, and land on its source. Powered by a Nucleo STM32 and a 14.8V Li-ion battery, it communicates with the remote via SPI protocol."
+        caption="The user's thumb connects to the delta robot's end effector, while index and middle fingers attach to separate haplink devices. A Processing IDE visualization shows finger positions and the 3D virtual object, complementing haptic feedback from the 7 DC motors. The three reference frames map to a global frame, with all virtual object interactions programmed in C on the Nucleo board."
         mt={SECTION_PT}
       />
 
       <Typography variant="h5" pt={HEADER_PT}>
-        Remote Control
+        Thumb
       </Typography>
-      <Viewer3DWithImage
-        glbFile="roboticist/hasselhoff_remote.glb"
-        imgSrc="roboticist/hasselhoff_remote_cad.png"
-      />
-      <CaptionedImage
-        src="roboticist/hasselhoff_schematic.png"
-        title="The Electronics"
-        caption="I designed the electrical schematic, which includes 5 LEDs, 2 joysticks, an LED display, and a potentiometer. I first prototyped the design on breadboards and then transferred it to protoboards for the final prototype. I also developed C code to program the Nucleo’s GPIO pins, configure timers, ADCs, and DMAs, and implement a state machine."
+      <CaptionedVideo
+        src="roboticist/haptic_thumb.mp4"
+        title="Delta Robot x1"
+        caption="The delta robot features 3 motors positioned at 0°, 120°, and 240° with 6 links, providing 3DOF movement. I adapted the forward kinematics code to track the thumb's xyz position and implemented the Jacobian matrix to convert 3D force vectors into motor torques. The haptic feedback system I programmed generates opposing forces proportional to the thumb's penetration depth into virtual objects."
         mt={SECTION_PT}
       />
-      <CaptionedImage
-        src="roboticist/hasselhoff_remote.jpg"
-        title="Mechanical Assembly"
+
+      <Typography variant="h5" pt={HEADER_PT}>
+        Fingers
+      </Typography>
+      <CaptionedVideo
+        src="roboticist/haptic_fingers.mp4"
+        title="Haplink Device x2"
         imgPosition="right"
-        caption="In collaboration with mechanical engineers, I assembled the final prototype using three 3D-printed layers. I then attached the user-visible components to the top layer with hot glue, organized and routed the wiring, and secured the assembly with screws, heat-set inserts, and standoffs to ensure a polished and functional product."
-        mt={SECTION_PT}
-      />
-
-      <Typography variant="h5" pt={HEADER_PT}>
-        Submarine
-      </Typography>
-      <Viewer3DWithImage
-        glbFile="roboticist/hasselhoff_sub.glb"
-        imgSrc="roboticist/hasselhoff_sub_cad.jpg"
-      />
-      <CaptionedImage
-        src="roboticist/hasselhoff_sub.jpg"
-        title="Mechanical Assembly"
-        caption="I assisted in the final assembly, which included inserting the Nucleo board and battery into the body and securing the lid with screws and a rubber gasket to achieve a watertight seal. I stayed until the end, working until 4 a.m. on demo day to ensure everything was ready for presentation 🫡."
+        caption="Each finger uses a separate 2DOF haplink device with 2 motors and capstan drives. We miniaturized our class lab haplinks and modified them to stand upright with finger holders. I debugged GPIO pins, motor configurations, and resolved Git issues."
         mt={SECTION_PT}
       />
     </Root>

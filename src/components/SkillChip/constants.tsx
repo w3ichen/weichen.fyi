@@ -98,6 +98,7 @@ export const SKILLS: { [skill: string]: SkillType } = {
   Arduino: "HARDWARE",
   Kernel: "HARDWARE",
   Android: "HARDWARE",
+  PWM: "HARDWARE",
   "DC Motor": "HARDWARE",
   "DC Motor Control": "HARDWARE",
   // Platform
