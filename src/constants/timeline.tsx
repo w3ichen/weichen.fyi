@@ -120,7 +120,7 @@ export const ALL_TIMELINE_DETAILS: Record<TimelineDetailsKey, TimelineDetail> =
       company: "MecSimCalc",
       position: "Co-founder, Chief Technology Officer (CTO)",
       startDate: { year: 2021, month: 6 },
-      endDate: "Present",
+      endDate: { year: 2026, month: 3 },
       logo: "entrepreneur/mecsimcalc_logo.jpg",
       location: "Edmonton, Canada",
       skills_meta: skills.MECSIMCALC_SKILLS_META,
